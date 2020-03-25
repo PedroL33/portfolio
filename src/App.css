@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.navbar-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: 'linear-gradient(to right, #000428, #004e92)';
+  color: 'white';
+}
+
+.spacer {
+  width: 35%;
+  top: 50%;
+  border-top: 5px double #7b8894;
+}
+
+.step {
+  width: 10%;
+}
+
+.active {
+  color: green;
+  border-color: green;
+}
+
+.active a i {
+  color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .spacer, .step-label {
+      display: none;
+  }
+}
