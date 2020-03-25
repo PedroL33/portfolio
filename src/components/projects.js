@@ -1,12 +1,15 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
 function Projects() {
     const style = {
-        height: '80vh'
+        padding: '15vh 0 0 0'
     }
+
+    const sticky = useSelector(state => state.sticky)
     
     return (
-        <div id="projects" style={style}>Projects</div>
+        <div id="projects" style={sticky ? style : null}>Projects</div>
     )
 }
 
