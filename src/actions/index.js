@@ -28,3 +28,16 @@ export const setSticky = (isSticky) => {
         payload: isSticky
     }
 }
+
+export const setText = (text) => {
+    return {
+        type: "SET_TEXT",
+        payload: text
+    }
+}
+
+export const clearText = () => {
+    return {
+        type: "CLEAR_TEXT"
+    }
+}

@@ -27,13 +27,13 @@ function App() {
     const project = projectRef.current.getBoundingClientRect().top
     const about = aboutRef.current.getBoundingClientRect().top 
     const contact = contactRef.current.getBoundingClientRect().top 
-    if(project <= 10 && about >= 10) {
-      dispatch(currentToProjects())
-    }else if(about <= 10 && contact >= 10) {
+    if(about <= document.documentElement.clientHeight * 0.11 && project >= document.documentElement.clientHeight) {
       dispatch(currentToAbout())
-    } else if(contact <= 10) {
+    }else if(project <= document.documentElement.clientHeight * 0.11 && contact >= document.documentElement.clientHeight) {
+      dispatch(currentToProjects())
+    } else if(contact <= document.documentElement.clientHeight * .11) {
       dispatch(currentToContact())
-    } else if(project >= 0) {
+    } else if(about >= 0) {
       dispatch(currentReset())
     }
   }
@@ -42,13 +42,13 @@ function App() {
     <div>
       <Header />
       <div ref={navRef}>
-        <Nav />
-      </div>
-      <div ref={projectRef}>
-        <Projects />
+        <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
       </div>
       <div ref={aboutRef}>
         <About />
+      </div>
+      <div ref={projectRef}>
+        <Projects />
       </div>
       <div ref={contactRef}>
         <Contact />

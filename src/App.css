@@ -5,35 +5,86 @@
 .navbar-sticky {
   position: fixed;
   top: 0;
-  width: 100%;
-  color: 'white';
+  left: 0;
+  z-index:2;
+  background-color: white;
 }
 
-.navbar-sticky + .content {
-  padding-top: 60px;
+.card-header, .card-footer {
+  background: linear-gradient(to right, #485563, #29323c);
+  color: white;
 }
 
 .spacer {
   width: 35%;
   top: 50%;
-  border-top: 5px double #7b8894;
+  border-top: 2px solid #cfd8e0;
 }
 
-.step {
-  width: 10%;
+.sticky-item {
+  padding-top: 10vh;
 }
 
-.active {
-  color: green;
-  border-color: green;
+.active > div, .active a i {
+  color: rgb(122, 122, 122);
 }
 
-.active a i {
-  color: green;
+.section-break {
+  border-top: 2px solid rgb(189, 186, 186);
+  width: 50%;
+  margin-top: 25vh;
 }
 
-@media only screen and (max-width: 768px) {
-  .spacer, .step-label {
-      display: none;
+.project-spacer {
+  margin: 10vh auto;
+  width: 20%;
+  border-top: 2px solid rgb(189, 186, 186);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(50%);
+}
+
+.navbar li .btn {
+  opacity:1;
+  color: white;
+  background-color: transparent;
+  border: none;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.navbar li .btn:hover { 
+  opacity: .5; 
+  background-color: transparent;
+}
+
+.navbar li.active .btn  { 
+  color: rgb(211, 205, 205);
+  border-radius: 10%;
+  text-decoration: bold;
+}
+
+#contact-nav {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar li {
+  width: 20%;
+}
+
+@media only screen and (max-width: 860px) {
+  #label {
+    display: none;
+  }
+  .btn i {
+    display: block;
   }
 }

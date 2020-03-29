@@ -1,12 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Contact() {
+    const sticky = useSelector(state => state.sticky)
     const style = {
         height: '120vh',
-        padding: '15vh 0 0 0'
     }
     return (
-        <div id="contact" style={style}>Contact</div>
+        <div className="stickyItem">
+            <div style={style}>Contact</div>
+        </div>
     )
 }
 
