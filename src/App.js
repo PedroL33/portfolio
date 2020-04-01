@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react';
 import './App.css';
 import Nav from './components/nav';
 import Header from './components/header';
-import Projects from './components/projects';
+import Projects from './components/projects/index';
 import About from './components/about';
 import Contact from './components/contact';
 import {setSticky, currentToAbout, currentToContact, currentToProjects, currentReset} from './actions/index';

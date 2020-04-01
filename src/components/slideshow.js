@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function Slideshow(props) {
     return (
-        <div>
+        <div className="slideshow">
             <Carousel>
                 {props.images.map(item => 
                     <Carousel.Item>

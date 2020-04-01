@@ -1,24 +1,9 @@
-.App {
-  text-align: center;
-}
-
 .navbar-sticky {
   position: fixed;
   top: 0;
   left: 0;
-  z-index:2;
+  z-index:19;
   background-color: white;
-}
-
-.card-header, .card-footer {
-  background: linear-gradient(to right, #485563, #29323c);
-  color: white;
-}
-
-.spacer {
-  width: 35%;
-  top: 50%;
-  border-top: 2px solid #cfd8e0;
 }
 
 .sticky-item {
@@ -29,21 +14,25 @@
   color: rgb(122, 122, 122);
 }
 
-.section-break {
-  border-top: 2px solid rgb(189, 186, 186);
-  width: 50%;
-  margin-top: 25vh;
-}
-
 .project-spacer {
   margin: 10vh auto;
   width: 20%;
-  border-top: 2px solid rgb(189, 186, 186);
+  border-bottom: 2px solid rgb(189, 186, 186);
 }
 
 .carousel-control-next,
 .carousel-control-prev {
     filter: invert(50%);
+}
+
+.slideshow div {
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+}
+
+.main li{
+  width:15%;
+  text-align: center;
 }
 
 .navbar li .btn {
@@ -56,6 +45,8 @@
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
+  font-size:1vw;
+  text-align: center;
 }
 
 .navbar li .btn:hover { 
@@ -76,8 +67,47 @@
   list-style-type: none;
 }
 
-.navbar li {
-  width: 20%;
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgb(235, 145, 62, 0.9);
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  height:0;
+  transition: .5s ease;
+  z-index:18;
+  border-radius: 0 0 10px 10px;;
+}
+
+.project-content {
+  color: white;
+  font-size: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.project-container {
+  position: relative;
+  width: 50%;
+}
+
+.project-nav{
+  background-color: rgb(235, 145, 62);
+  border-radius: 10px 10px 0 0;
+}
+
+.project-title {
+  color: white;
+  font-size: 2vw;
+  margin: auto auto auto 3vw;
 }
 
 @media only screen and (max-width: 860px) {

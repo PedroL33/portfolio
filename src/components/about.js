@@ -5,7 +5,7 @@ function About() {
 
     const sticky = useSelector(state => state.sticky);
     const style = {
-        padding: "10% 0"
+        padding: "5% 0"
     }
     return (
         <div className={sticky ? "sticky-item text-center" : "text-center"}>
