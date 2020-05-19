@@ -1,38 +1,32 @@
 import React from 'react';
-import Slideshow from '../slideshow';
 import Project from './project';
 
 function Projects() {
 
-    const racetyperImages = ['rt1', 'rt2', 'rt3', 'rt4'];
+    const racetyperImages = ['rt1', 'rt2', 'rt3'];
     const trTitle = "Race Typer"
-    const trDescription = "Race-typer is a clone of typeracer.com, an educational typing app. Features token based authentication on the back end and a simple user interface."
+    const trDescription = "Race-typer is a clone of typeracer.com, an educational typing app. Built React and Node.js"
     const trLinks = ["https://race-typer.com", "https://github.com/PedroL33/odin_facebook"]
-    const trStack = {
-        Frontend: ["React.js", "Bootstrap"],
-        Backend: ["Node.js", "Express", "MongoDB"],
-        Libraries: ["React-Spring", "React-Redux", "jsonwebtoken"],
-        Deployment: ["AWS-Amplify"]
-    }
 
     const smTitle = "Social Media"
-    const socialmediaImages = ['sm1', 'sm2', 'sm3', 'sm4']
-    const smDescription = "A simple social media app with posts, comments likes and friends. Shows a strong understanding of relational databases."
+    const socialmediaImages = ['sm1', 'sm2', 'sm3']
+    const smDescription = "A simple social media app with posts, comments likes and friends. Built using Ruby on Rails and bootstrap."
     const smLinks =  ["https://fierce-bastion-80502.herokuapp.com/", "https://github.com/PedroL33/racetyper"];
-    const smStack = {
-        Frontend: ["Bootstrap"],
-        Backend: ["Ruby on Rails", "PostgreSQL"],
-        Libraries: ["Active Storage", "Devise", "SendGrid"],
-        Deployment: ["Heroku"]
-    }
+
+    const caTitle = "Chat App"
+    const caImages = ['ca1', 'ca2', 'ca3']
+    const caDescription = "A social chatting app.  Created with Node.js, React, Neo4j and Socket.io."
+    const caLinks = ["https://www.chatapp.site", "https://github.com/PedroL33/chat_app_front"]
 
     return (
-        <div> 
+        <div>
             <div className="project-spacer"></div>
-            <Project title={trTitle} description={trDescription} stack={trStack} images={racetyperImages} links={trLinks}  />
-            <div className="project-spacer"></div>
-            <Project title={smTitle} description={smDescription} stack={smStack} images={socialmediaImages} links={smLinks} />
-            <div className="project-spacer"></div>
+            <h1 className="text-center mb-5">Projects</h1>
+            <div className="row projects-container"> 
+                <Project title={trTitle} description={trDescription} images={racetyperImages} links={trLinks}  />
+                <Project title={smTitle} description={smDescription} images={socialmediaImages} links={smLinks} />
+                <Project title={caTitle} description={caDescription} images={caImages} links={caLinks} />
+            </div>
         </div>
     )
 }

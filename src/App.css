@@ -22,12 +22,41 @@
 
 .carousel-control-next,
 .carousel-control-prev {
-    filter: invert(50%);
+    display: none;
 }
 
-.slideshow div {
-  border-radius: 0 0 10px 10px;
+.slideshow {
+  border-radius: 10px;
   width: 100%;
+}
+
+.projects-container {
+  width: 90%;
+  margin: auto;
+}
+
+.project {
+  /* height: 600px; */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.project-container {
+  position: relative;
+  padding: 25px;
+  border-radius: 30px;
+}
+
+.project-content {
+  color: white;
+  font-size: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .main li{
@@ -79,42 +108,42 @@
   height:0;
   transition: .5s ease;
   z-index:18;
-  border-radius: 0 0 10px 10px;;
+  font-size: 10px;
 }
 
-.project-content {
-  color: white;
-  font-size: 1vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.overlay-links {
   text-align: center;
 }
 
-.project-container {
-  position: relative;
-  width: 50%;
+.about-image {
+  width: 400px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  border-radius: 50%;
+  position: absolute;
+  left: -200px;
 }
 
-.project-nav{
-  background-color: rgb(235, 145, 62);
-  border-radius: 10px 10px 0 0;
+.about-info {
+  height: 400px;
+  margin-left: 200px;
+  padding: 0 50px 0 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.project-title {
-  color: white;
-  font-size: 2vw;
-  margin: auto auto auto 3vw;
-}
-
-@media only screen and (max-width: 860px) {
-  #label {
-    display: none;
+@media screen and (max-width: 1200px) {
+  .about-info {
+    margin: 200px auto 0 auto;
+    width: 600px;
+    padding: 200px 100px 0 100px;
   }
-  .btn i {
-    display: block;
+
+  .about-image {
+    position: absolute;
+    top: -200px;
+    left: 100px;
   }
 }

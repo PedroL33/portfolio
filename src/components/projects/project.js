@@ -22,49 +22,26 @@ function Project(props) {
     }
 
     return (
-        <div>
-            <div className="w-50 d-flex project-nav mx-auto">
-                <div className="nav-link project-title">
-                    {props.title}
-                </div>   
-                <div className="navbar nav ml-auto">
-                    <li>
-                        <div className="btn" onMouseOver={(e) => handleMouseEnter(e, "description")} onMouseLeave={(e) => handleMouseLeave(e)}>Description</div>
-                    </li>
-                    <li>
-                        <div className="btn" onMouseOver={(e) => handleMouseEnter(e, "stack")} onMouseLeave={(e) => handleMouseLeave(e)}>Stack</div>
-                    </li>
-                    <li>
-                        <div className="btn">
-                            <a href={props.links[1]}>
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="btn">
-                            <a href={props.links[0]}>
-                                <i class="fas fa-play text-white"></i>
-                            </a>
-                        </div>
-                    </li>
-                </div>
-            </div>
-            <div className="mx-auto project-container">
+        <div className="col-xl-4 col-lg-6 project">
+            <div className="mx-auto project-container shadow bg-white rounded" onMouseOver={(e) => handleMouseEnter(e, "description")} onMouseLeave={(e) => handleMouseLeave(e)}>
                 <div>
                     <div ref={overlayRef} className="overlay">
                         <div className="project-content w-75">
                             {current==="description" ? 
-                                <div className="text-left">{props.description}</div> : 
-                            current==="stack" ? 
                                 <div>
-                                    <div className="row">
-                                    {Object.keys(props.stack).map(key => 
-                                        <div className="col-3">
-                                            <div className="font-weight-bold"><u>{key}</u></div>
-                                            {props.stack[key].map(item => <div>{item}</div>)}
-                                        </div>   
-                                    )}
+                                    <h1>{props.title}</h1>
+                                    {props.description}
+                                    <div className="overlay-links">
+                                        <div className="btn">
+                                            <a href={props.links[0]}>
+                                                <i class="fas fa-play text-white"></i>
+                                            </a>
+                                        </div>
+                                        <div className="btn">
+                                            <a href={props.links[1]}>
+                                                <i class="fab fa-github text-white"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div> : null }
                         </div>
