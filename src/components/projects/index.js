@@ -20,7 +20,7 @@ function Projects() {
 
     return (
         <div>
-            <div className="project-spacer"></div>
+            <div className="section-spacer"></div>
             <h1 className="text-center mb-5">Projects</h1>
             <div className="row projects-container"> 
                 <Project title={trTitle} description={trDescription} images={racetyperImages} links={trLinks}  />

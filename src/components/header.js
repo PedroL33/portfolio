@@ -34,7 +34,7 @@ function Header() {
                     <li className="text-center mx-2">
                         <div className="btn">
                             <a className="text-white" href="https://github.com/PedroL33">
-                                <i className="far fa-file"></i>
+                                <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </li>
