@@ -128,10 +128,12 @@
 .about-info {
   height: 400px;
   margin-left: 200px;
-  padding: 0 50px 0 250px;
+  padding: 0 100px 0 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5vw;
+  text-indent: 2em;
 }
 
 .contact-container {
@@ -165,6 +167,7 @@
 
 .contact-link-item:hover {
   color: orange;
+  cursor: pointer;
 }
 
 .footer-container {
@@ -176,12 +179,36 @@
   align-items: center;
 }
 
+textarea {
+  width: 100%;
+  font-size: 16px;
+  height: 100px;
+}
+
+.response-error, .response-success {
+  font-size: 16px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.response-error {
+  background-color: rgb(255, 0, 0, 0.4);
+}
+
+.response-success {
+  background-color: rgb(0, 128, 0, 0.4);
+}
 
 @media screen and (max-width: 1200px) {
   .about-info {
     margin: 200px auto 0 auto;
     width: 600px;
     padding: 200px 100px 0 100px;
+    text-align: center;
+    text-indent: 0;
   }
 
   .about-image {

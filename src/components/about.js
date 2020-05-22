@@ -8,7 +8,7 @@ function About() {
         padding: "10% 0"
     }
     return (
-        <div className={sticky ? "sticky-item text-center" : "text-center"}>
+        <div className={sticky ? "sticky-item": "" }>
             <div style={style} className="w-75 mx-auto">
                 <div className="mx-auto">
                     <div className="shadow bg-white about-info rounded position-relative">

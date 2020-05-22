@@ -41,3 +41,16 @@ export const clearText = () => {
         type: "CLEAR_TEXT"
     }
 }
+
+export const setMessageResponse = (response) => {
+    return {
+        type: "SET_MESSAGE_RESPONSE",
+        payload: response
+    }
+}
+
+export const clearMessageResponse = () => {
+    return {
+        type: "CLEAR_MESSAGE_RESPONSE"
+    }
+}

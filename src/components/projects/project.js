@@ -22,7 +22,7 @@ function Project(props) {
     }
 
     return (
-        <div className="col-xl-4 col-lg-6 project">
+        <div className="col-xl-4 col-md-6 project">
             <div className="mx-auto project-container shadow bg-white rounded" onMouseOver={(e) => handleMouseEnter(e, "description")} onMouseLeave={(e) => handleMouseLeave(e)}>
                 <div>
                     <div ref={overlayRef} className="overlay">
