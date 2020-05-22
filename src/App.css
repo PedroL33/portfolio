@@ -1,3 +1,7 @@
+body {
+  font-family: 'Space Mono', monospace;
+}
+
 .navbar-sticky {
   position: fixed;
   top: 0;
@@ -147,7 +151,8 @@
 }
 
 .contact-container h1 {
-  font-size: 3vw;
+  font-size: 2.2vw;
+  margin-bottom: 5vh;
 }
 
 .contact-links {
@@ -183,6 +188,7 @@ textarea {
   width: 100%;
   font-size: 16px;
   height: 100px;
+  margin-bottom: 2vh;
 }
 
 .response-error, .response-success {
