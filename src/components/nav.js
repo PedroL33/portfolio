@@ -51,21 +51,21 @@ export default function Nav(props) {
                     </li>
                 </ul>
                 <ul className={sticky ? "navbar nav ml-auto" : "d-none"}>
-                    <li className="text-center mx-2">
+                    <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Resume">
                             <a className="text-white" href={window.location.origin + "/Resume.pdf"}>
                                 <i className="far fa-file-pdf"></i>
                             </a>
                         </div>
                     </li>
-                    <li className="text-center mx-2">
+                    <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="botttom" title="LinkedIn">
                             <a className="text-white" href="https://www.linkedin.com/in/peter-lee-2973371a4/">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
                     </li>
-                    <li className="text-center mx-2">
+                    <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Github">
                             <a className="text-white" href="https://github.com/PedroL33">
                                 <i class="fab fa-github"></i>

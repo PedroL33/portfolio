@@ -78,7 +78,7 @@ body {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
-  font-size:16px;
+  font-size:14px;
   text-align: center;
 }
 
@@ -160,7 +160,7 @@ body {
   justify-content: space-between;
   padding:0;
   list-style-type: none;
-  font-size: 3em;
+  font-size: 5vw;
   margin-top: 2%;
 }
 
@@ -214,18 +214,19 @@ textarea {
   .about-info {
     margin: 200px auto 0 auto;
     width: 90%;
-    padding: 200px 100px 0 100px;
+    padding: 150px 50px 0 50px;
     text-align: center;
     text-indent: 0;
   }
 
   .about-image {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    background-size: 300px 300px;
     position: absolute;
     left: 50%;
-    margin-left: -200px;
-    top: -200px;
+    margin-left: -150px;
+    top: -100px;
   }
 
   .contact-container {
