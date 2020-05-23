@@ -15,7 +15,7 @@ function Header() {
     return (
         <div id="header" className="d-flex justify-content-center flex-column text-center align-items-center" style={style}>
             <div>
-                <h1>Peter Lee</h1>
+                <h2>Peter Lee</h2>
                 <h2>Software Developer</h2>
             </div>
             <ul className="navbar nav">

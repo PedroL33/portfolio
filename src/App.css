@@ -53,7 +53,7 @@ body {
 
 .project-content {
   color: white;
-  font-size: 1vw;
+  font-size: 12px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,6 +61,10 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.project-content h1 {
+  font-size: 24px;
 }
 
 .main li{
@@ -91,7 +95,7 @@ body {
   color: rgb(211, 205, 205);
   border-radius: 10%;
   text-decoration: bold;
-}
+} 
 
 #contact-nav {
   display: flex;
@@ -150,18 +154,18 @@ body {
   justify-content:center;
 }
 
-.contact-container h1 {
+h1 {
   font-size: 2.2vw;
-  margin-bottom: 5vh;
+  text-align: center;
 }
 
 .contact-links {
   display: flex;
   justify-content: space-between;
   padding:0;
+  margin:0;
   list-style-type: none;
   font-size: 5vw;
-  margin-top: 2%;
 }
 
 .contact-link-item {
@@ -210,13 +214,13 @@ textarea {
 
 @media screen and (max-width: 1200px) {
 
-
   .about-info {
     margin: 200px auto 0 auto;
     width: 90%;
-    padding: 150px 50px 0 50px;
+    padding: 150px 25px 0 25px;
     text-align: center;
     text-indent: 0;
+    font-size: 8px;
   }
 
   .about-image {

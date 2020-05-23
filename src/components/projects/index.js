@@ -21,7 +21,7 @@ function Projects() {
     return (
         <div>
             <div className="section-spacer"></div>
-            <h1 className="text-center mb-5">Projects</h1>
+            <h2 className="text-center mb-5">Projects</h2>
             <div className="row projects-container"> 
                 <Project title={trTitle} description={trDescription} images={racetyperImages} links={trLinks}  />
                 <Project title={smTitle} description={smDescription} images={socialmediaImages} links={smLinks} />

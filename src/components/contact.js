@@ -42,8 +42,8 @@ function Contact() {
     return (
         <div className="stickyItem">
             <div className="section-spacer"></div>
+            <h1>Feel free to get in touch!</h1>
             <div className="contact-container shadow bg-white rounded">
-                <h1>Feel free to get in touch!</h1>
                 <ul className="contact-links">
                     <li>
                         <a className="contact-link-item" href="mailto: leepeter019@gmail.com" data-toggle="tooltip" data-placement="top" title="E-mail">
