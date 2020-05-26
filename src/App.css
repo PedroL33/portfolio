@@ -45,12 +45,6 @@ body {
   margin: auto;
 }
 
-.project-container {
-  position: relative;
-  padding: 25px;
-  border-radius: 30px;
-}
-
 .project-content {
   color: white;
   font-size: 12px;
@@ -104,19 +98,38 @@ body {
   list-style-type: none;
 }
 
-.overlay {
+.project-container:hover .front {
+  transform: rotateY(180deg);
+}
+
+.project-container:hover .back {
+  transform: none;
+}
+
+.project-container {
+  position: relative;
+  transition: 1s;
+}
+
+.front {
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition-duration: 600ms;
+}
+
+.back {
   position: absolute;
-  bottom: 100%;
+  top: 0;
   left: 0;
-  right: 0;
   background-color: rgb(235, 145, 62, 0.9);
   overflow: hidden;
   width: 100%;
   margin: auto;
-  height:0;
-  transition: .5s ease;
-  z-index:18;
+  height:100%;
   font-size: 10px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition-duration: 600ms;
 }
 
 .overlay-links {

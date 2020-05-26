@@ -5,7 +5,7 @@ function Projects() {
 
     const racetyperImages = ['rt1', 'rt2', 'rt3'];
     const trTitle = "Race Typer"
-    const trDescription = "Race-typer is a clone of typeracer.com, an educational typing app. Built React and Node.js"
+    const trDescription = "Race-typer is a clone of typeracer.com, an educational typing app. Built with React and Node.js"
     const trLinks = ["https://race-typer.com", "https://github.com/PedroL33/odin_facebook"]
 
     const smTitle = "Social Media"
