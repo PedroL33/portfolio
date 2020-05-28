@@ -36,17 +36,17 @@ export default function Nav(props) {
                 <ul className={sticky ? "navbar nav w-50 main": "navbar nav mx-auto main w-50"}>
                     <li className={current==="about" ? "mx-2 my-2 text-center active" : "mx-2"}>
                         <div className="btn about" onMouseLeave={e => dispatch(clearText())} onMouseEnter={e=> dispatch(setText("About"))} onClick={e => handleClick(e, props.aboutRef)}>
-                            {navText==="About" ? <span>About</span> : <i class="fas fa-user-alt"></i>}
+                            {navText==="About" ? <div>About</div> : <i class="fas fa-user-alt"></i>}
                         </div>
                     </li>
                     <li className={current==="projects" ? "mx-2 text-center active" : "mx-2"}>
                         <div className="btn" onMouseLeave={e => dispatch(clearText())} onMouseEnter={e=> dispatch(setText("Projects"))} onClick={e => handleClick(e, props.projectRef)}>
-                            {navText==="Projects" ? <span>Projects</span> : <i class="fas fa-project-diagram"></i>}
+                            {navText==="Projects" ? <div>Projects</div> : <i class="fas fa-project-diagram"></i>}
                         </div>
                     </li>
                     <li className={current==="contact" ? "mx-2 text-center active" : "mx-2"}>
                         <div className="btn" onMouseLeave={e => dispatch(clearText())} onMouseEnter={e=> dispatch(setText("Contact"))} onClick={e => handleClick(e, props.contactRef)}>
-                            {navText==="Contact" ? <span>Contact</span> : <i class="fas fa-feather"></i>}
+                            {navText==="Contact" ? <div>Contact</div> : <i class="fas fa-feather"></i>}
                         </div>
                     </li>
                 </ul>

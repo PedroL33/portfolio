@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 function Slideshow(props) {
     return (
         <div className="slideshow">
-            <Carousel style={{backfaceVisibility: "hidden"}}>
+            <Carousel>
                 {props.images.map(item => 
                     <Carousel.Item>
                         <img
