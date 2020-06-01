@@ -21,21 +21,21 @@ function Header() {
             <ul className="navbar nav">
                     <li className="text-center mx-2">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Resume">
-                            <a className="text-white" href={window.location.origin + "/Resume.pdf"}>
+                            <a className="text-white" href={window.location.origin + "/Resume.pdf"} target="_blank">
                             <i className="far fa-file-pdf"></i>
                             </a>
                         </div>
                     </li>
                     <li className="text-center mx-2">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="LinkedIn">
-                            <a className="text-white" href="https://www.linkedin.com/in/peter-lee-2973371a4/">
+                            <a className="text-white" href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                         </div>
                     </li>
                     <li className="text-center mx-2">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Github">
-                            <a className="text-white" href="https://github.com/PedroL33">
+                            <a className="text-white" href="https://github.com/PedroL33" target="_blank">
                                 <i className="fab fa-github"></i>
                             </a>
                         </div>

@@ -53,21 +53,21 @@ export default function Nav(props) {
                 <ul className={sticky ? "navbar nav ml-auto" : "d-none"}>
                     <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Resume">
-                            <a className="text-white" href={window.location.origin + "/Resume.pdf"}>
+                            <a className="text-white" href={window.location.origin + "/Resume.pdf"} target="_blank">
                                 <i className="far fa-file-pdf"></i>
                             </a>
                         </div>
                     </li>
                     <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="botttom" title="LinkedIn">
-                            <a className="text-white" href="https://www.linkedin.com/in/peter-lee-2973371a4/">
+                            <a className="text-white" href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
                     </li>
                     <li className="text-center">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Github">
-                            <a className="text-white" href="https://github.com/PedroL33">
+                            <a className="text-white" href="https://github.com/PedroL33" target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
