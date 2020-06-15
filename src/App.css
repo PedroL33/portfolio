@@ -98,25 +98,39 @@ body {
   margin: 25px;
 }
 
+.project-summary {
+  height: 100px;
+  width: 100%;
+  margin:auto;
+  padding: 20px;
+  background-color: rgb(224, 224, 224);
+}
+
 .project-features h2, .project-tech h2 {
   margin-top: 20px;
   text-indent: 20px;
   text-align: left;
 }
 
-.project-features {
-  margin: auto;
+.project-features, .project-tech {
+  margin-top: 20px;
 }
 
 .feature {
-  text-align: center;
   padding: 10px;
+  text-align: left;
+  display: flex;
+}
+
+.feature-desc {
+  display: inline-block;
+  overflow-wrap: break-word;
 }
 
 .feature i {
-  font-size: 72px;
+  font-size: 24px;
   color: orange;
-  padding: 20px 0;
+  padding: 0 10px 0 30px;
 }
 
 .tech {
@@ -127,7 +141,7 @@ body {
 }
 
 .tech-item img {
-  width: 125px;
+  width: 100px;
   padding: 10px;
 }
 
@@ -140,26 +154,52 @@ body {
   font-size: 24px;
   text-align: center;
   height: 100px;
+  position: absolute;
+  top: 20px;
+  z-index: 2;
+  right: 0px;
+  align-items: flex-end;
+  /* justify-content: space-around; */
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .project-link {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(180, 180, 180);
-  border: 1px solid white;
+  padding: 10px !important;
   color: white;
+  background-color: orange;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid white;
+  border-right: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-link i {
+  width: 25px;
+}
+
+.project-link span {
+  max-width: 0;
+  -webkit-transition: max-width 1s;
+  transition: max-width 1s;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  color: orange;
+  font-size: 16px;
 }
 
 .project-link:hover {
-  color: white;
-  background-color: orange;
   text-decoration: none;
+  color: white; 
+}
+
+.project-link:hover span {
+  max-width: 80px;
+  color: white;
 }
 
 .project-links a {
@@ -167,7 +207,7 @@ body {
 }
 
 .feature-container {
-  padding: 10px;
+  padding: 5px;
 }
 
 .close {
