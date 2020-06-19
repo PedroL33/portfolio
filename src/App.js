@@ -48,12 +48,15 @@ function App() {
       <div ref={aboutRef}>
         <About />
       </div>
+      <div className="section-spacer"></div>
       <div ref={projectRef}>
         <Projects />
       </div>
+      <div className="section-spacer"></div>
       <div ref={contactRef}>
         <Contact />
       </div>
+      <div className="section-spacer"></div>
       <Footer />
     </div>
   )

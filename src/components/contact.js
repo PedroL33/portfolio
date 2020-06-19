@@ -40,8 +40,7 @@ function Contact() {
     }
     
     return (
-        <div className="stickyItem">
-            <div className="section-spacer"></div>
+        <div className="stickyItem contact-section">
             <h1>Feel free to get in touch!</h1>
             <div className="contact-container shadow bg-white rounded">
                 <ul className="contact-links">
@@ -97,7 +96,6 @@ function Contact() {
                     </li>
                 </ul>
             </div>
-            <div className="section-spacer"></div>
         </div>
     )
 }

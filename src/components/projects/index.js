@@ -9,6 +9,7 @@ function Projects() {
                         {feature: "RESTful API backend to store user data.", icon: "fas fa-database"},
                         {feature:"Animations using the React-Spring library", icon: "fas fa-object-group"}]
     const trLinks = ["https://race-typer.com", "https://github.com/PedroL33/racetyper"]
+    const trImg = "trImg.png"
     const trIcon = "typeracer.png";
     const trTech = ["React", "NodeJS", "MongoDB", "Express", "Redux"]
 
@@ -18,6 +19,7 @@ function Projects() {
                         {feature: "Secure authentication using Ruby Devise gem", icon: "fas fa-lock"}, 
                         {feature:"Welcome emails using the Ruby on Rails Action Mailer", icon: "far fa-envelope"}];
     const smLinks =  ["https://fierce-bastion-80502.herokuapp.com/", "https://github.com/PedroL33/odin_facebook"];
+    const smImg = "smImg.png";
     const smIcon = "socialmedia.png";
     const smTech = ["Rails", "Postgres", "Bootstrap"]
 
@@ -28,17 +30,17 @@ function Projects() {
                         {feature: "Realtime friend updates through SocketIO", icon: "fas fa-history"},
                         {feature: "Token based authentication", icon: "fas fa-lock"}]
     const caLinks = ["https://www.chatapp.site", "https://github.com/PedroL33/chat_app_front"]
+    const caImg = "caImg.png";
     const caIcon = "chatapp.png"
     const caTech = ["React", "MongoDB", "NodeJS", "Express", "Neo4j"]
 
     return (
-        <div>
-            <div className="section-spacer"></div>
+        <div className="projects-section">
             <h2 className="text-center mb-5">Projects</h2>
             <div className="row projects-container"> 
-                <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} icon={trIcon} tech={trTech} />
-                <Project title={smTitle} summary={smSummary} features={smFeatures} links={smLinks} icon={smIcon} tech={smTech} />
-                <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} icon={caIcon} tech={caTech} />
+                <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} img={trImg} icon={trIcon} tech={trTech} />
+                <Project title={smTitle} summary={smSummary} features={smFeatures} links={smLinks} img={smImg} icon={smIcon} tech={smTech} />
+                <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} img={caImg} icon={caIcon} tech={caTech} />
             </div>
         </div>
     )
