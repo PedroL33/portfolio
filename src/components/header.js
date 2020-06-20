@@ -18,7 +18,7 @@ function Header() {
                 <h2>Peter Lee</h2>
                 <h2>Software Developer</h2>
             </div>
-            <ul className="navbar nav">
+            <ul className="header-links">
                     <li className="text-center mx-2">
                         <div className="btn" data-toggle="tooltip" data-placement="bottom" title="Resume">
                             <a className="text-white" href={window.location.origin + "/Resume.pdf"} target="_blank">

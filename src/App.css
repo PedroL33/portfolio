@@ -119,15 +119,15 @@ body {
 }
 
 .modal-dialog {
-  width: 100%;
+  width: 1200px;
+  max-width: none;
   height: 100%;
   margin: auto;
-  padding: 0;
-  display: flex;  
+  display: flex;
 }
 
 .modal-content {
-  height: auto;  
+  width: 100%;
   border-radius: 0;
   margin: auto;
   overflow: auto;
@@ -167,15 +167,15 @@ body {
 
 /* Project modal body */
 
-.project-body {
+.project-features-container {
   width: 90%;
   background: white;
-  padding: 0;
+  padding: 50px;
   margin: 50px auto;
   color: grey;
 }
 
-.project-features-container h2, .project-tech h2 {
+.project-features-container h2 {
   text-align: left;
   text-indent: 25px;
   padding: 30px 0;
@@ -194,15 +194,16 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  /* background: rgb(238, 238, 238) */
 }
 
 .feature-desc {
   overflow-wrap: break-word;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .feature i {
-  font-size: 48px;
+  font-size: 36px;
   color: #ff9966;
   padding: 30px;
 }
@@ -211,20 +212,27 @@ body {
 
 .tech {
   display: flex;
-  justify-content: space-around;
-  width: 80%;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 800px;
   margin: auto;
   padding: 30px 0 70px 0;
 }
 
 .tech-item img {
   width: 100px;
-  padding: 20px 10px;
+  padding: 15px;
 }
 
 .tech-item {
+  width: 100px;
+  height: 100px;
   display: flex;
+  margin: 10px;
   align-items: center;
+  border-radius: 50%;
+  border: 3px solid rgb(218, 218, 218);
+  background: white;
 }
 
 /* Project modal buttons */
@@ -289,8 +297,12 @@ body {
 }
 
 .project-img-container {
-  width: 95%;
-  margin: 50px auto;
+  width: 600px;
+  height: auto;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color:rgb(230, 230, 230);
 }
 
 /* About section */
@@ -548,6 +560,20 @@ textarea {
   }
 
   .contact-container {
+    width: 80%;
+  }
+
+  /* modal */
+
+  .modal-dialog {
+    width: 90%;
+  }
+
+  .project-img-container {
+    width: 90%;
+  }
+
+  .tech {
     width: 80%;
   }
 }
