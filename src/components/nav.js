@@ -32,7 +32,7 @@ export default function Nav(props) {
     return (
         <div style={style} className={sticky ? "navbar-sticky d-flex align-items-center" : "d-flex align-items-center"}>
             <nav className="w-100 d-flex align-items-center justify-content-between">
-                <ul className={sticky ? "main": "mx-auto main"}>
+                <ul className="main">
                     <li onMouseLeave={e => dispatch(clearText())} onMouseEnter={e=> dispatch(setText("About"))} onClick={() => handleClick(props.aboutRef)}>
                         {navText==="About" ? <div>About</div> : <i className="fas fa-user-alt"></i>}
                     </li>
@@ -41,23 +41,6 @@ export default function Nav(props) {
                     </li>
                     <li onMouseLeave={e => dispatch(clearText())} onMouseEnter={e=> dispatch(setText("Contact"))} onClick={() => handleClick(props.contactRef)}>
                         {navText==="Contact" ? <div>Contact</div> : <i className="fas fa-feather"></i>}
-                    </li>
-                </ul>
-                <ul className={sticky ? "side-nav" : "d-none"}>
-                    <li data-toggle="tooltip" data-placement="bottom" title="Resume">
-                        <a href={window.location.origin + "/Resume.pdf"} target="_blank">
-                            <i className="far fa-file-pdf"></i>
-                        </a>
-                    </li>
-                    <li data-toggle="tooltip" data-placement="botttom" title="LinkedIn">
-                        <a href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li data-toggle="tooltip" data-placement="bottom" title="Github">
-                        <a href="https://github.com/PedroL33" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
                     </li>
                 </ul>
             </nav>

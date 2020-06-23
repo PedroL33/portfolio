@@ -7,13 +7,13 @@ function Modal(props) {
           <div className="modal-content">
             <div className="project-links">
               <button type="button" className="project-link" data-dismiss="modal" aria-label="Close">
-                <i class="fas fa-times"></i><span aria-hidden="true">&nbsp;Close</span>
+                <i className="fas fa-times"></i><span aria-hidden="true">&nbsp;Close</span>
               </button>
               <a href={props.links[1]} target="_blank" className="project-link">
-                  <i class="fab fa-github"></i><span>&nbsp;Repo</span>
+                <i className="fab fa-github"></i><span>&nbsp;Repo</span>
               </a>
               <a href={props.links[0]} target="_blank" className="project-link">
-                  <i class="fas fa-play"></i><span>&nbsp;Live</span>
+                <i className="fas fa-play"></i><span>&nbsp;Live</span>
               </a>
             </div>
             <div className="modal-container">
@@ -36,8 +36,8 @@ function Modal(props) {
                 <div className="project-features-container">
                   <h2>Features...</h2>
                   <div className="project-features">
-                    {props.features.map(item => (<div className="col-md feature-container"> 
-                      <div className="feature">
+                    {props.features.map(item => (<div className="feature-container"> 
+                      <div className="feature shadow">
                         <i className={item.icon}></i> 
                         <div className="feature-desc">{item.feature}</div>
                       </div>

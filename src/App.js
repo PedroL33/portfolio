@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './components/nav';
 import Header from './components/header';
 import Projects from './components/projects/index';
-import About from './components/about';
+import About from './components/about/about';
 import Contact from './components/contact';
 import Footer from './components/footer';
 import {setSticky, currentToAbout, currentToContact, currentToProjects, currentReset} from './actions/index';

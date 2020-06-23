@@ -1,5 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import Aboutnavbar from './aboutnavbar';
+import AboutHeader from './aboutHeader';
+import Skills from './skills';
+import Interests from './interests';
 import { useSelector } from 'react-redux';
 
 function About() {
@@ -12,12 +15,16 @@ function About() {
 
   const sticky = useSelector(state => state.sticky);
 
+  useEffect(() => {
+    containerRef.current.scrollTo({top: 0})
+  }, [])
+
   return (
     <div className={sticky ? "sticky-item": "" }>
       <div className="mx-auto about-section">
         <div className="shadow about-info rounded position-relative">
           <Aboutnavbar containerRef={containerRef} aboutRef={aboutRef} skillRef={skillRef} interestsRef={interestsRef} contactRef={contactRef} />
-          <div style={{backgroundImage: `url(${window.location.origin + "/images/greeting.jpg"}`}} className="about-image shadow" />
+          <AboutHeader />
           <div className="about-contents" ref={containerRef}>
             <div className="about-body">
               <div className="about-me" ref={aboutRef}>
@@ -25,13 +32,13 @@ function About() {
                 I am always looking for new people to work with and learn from.  Check out my portfolio to see some of the stuff I have done!
               </div>
               <div className="about-skills" ref={skillRef}>
-                Skills
+                <Skills />
               </div>
               <div className="about-interests" ref={interestsRef}>
-                Interests
+                <Interests />
               </div>
               <div className="about-contact" ref={contactRef}>
-                Interests
+                Contact Info
               </div>
             </div>
           </div>

@@ -54,3 +54,10 @@ export const clearMessageResponse = () => {
         type: "CLEAR_MESSAGE_RESPONSE"
     }
 }
+
+export const setAboutHeader = (section) => {
+  return {
+    type: "SET_ABOUT_HEADER",
+    payload: section
+  }
+}

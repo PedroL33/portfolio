@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {setAboutHeader} from '../../actions';
 
 function Aboutnavbar(props) {
 
-  const [active, setActive] = useState("about")
+  const dispatch = useDispatch()
+
+  const [active, setActive] = useState("about");
 
   function handleClick(ref, section) {
     const topOffset = ref.current.offsetTop
-    props.containerRef.current.scrollTo({top: topOffset, behavior: 'smooth'});
+    props.containerRef.current.scrollTo({top: topOffset, right: 0, behavior: 'smooth'});
     setActive(section)
+    dispatch(setAboutHeader(section))
   }
 
   return (
