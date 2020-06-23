@@ -9,8 +9,8 @@ function Footer() {
                     leepeter019@gmail.com
                 </a> 
                 &nbsp;|
-                Icons made by <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a> 
-                and <a href="https://www.flaticon.com/authors/catkuro" title="catkuro">catkuro</a>
+                Icons made by <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101 </a> 
+                and <a href="https://www.flaticon.com/authors/catkuro" title="catkuro">catkuro </a>
                 from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             </div>
         </div>

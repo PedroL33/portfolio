@@ -10,9 +10,10 @@ function Aboutnavbar(props) {
 
   function handleClick(ref, section) {
     const topOffset = ref.current.offsetTop
-    props.containerRef.current.scrollTo({top: topOffset, right: 0, behavior: 'smooth'});
+    props.containerRef.current.scrollTo({top: topOffset, behavior: 'smooth'});
     setActive(section)
     dispatch(setAboutHeader(section))
+    console.log(topOffset)
   }
 
   return (
@@ -28,10 +29,6 @@ function Aboutnavbar(props) {
       <div className={active==="interests" ? "about-nav-button active" : "about-nav-button"} onClick={(e) => handleClick(props.interestsRef, "interests")}>
         <i class="far fa-star"></i>
         <div>Interests</div>
-      </div>
-      <div className={active==="contact" ? "about-nav-button active" : "about-nav-button"} onClick={(e) => handleClick(props.contactRef, "contact")}>
-        <i class="fas fa-feather"></i>
-        <div>Contact</div>
       </div>
     </div>
   )

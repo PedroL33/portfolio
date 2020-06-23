@@ -45,19 +45,21 @@ function App() {
       <div ref={navRef}>
         <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
       </div>
-      <div ref={aboutRef}>
-        <About />
+      <div className="page-content">
+        <div ref={aboutRef}>
+          <About projectRef={projectRef} contactRef={contactRef}/>
+        </div>
+        <div className="section-spacer"></div>
+        <div ref={projectRef}>
+          <Projects />
+        </div>
+        <div className="section-spacer"></div>
+        <div ref={contactRef}>
+          <Contact />
+        </div>
+        <div className="section-spacer"></div>
+        <Footer />
       </div>
-      <div className="section-spacer"></div>
-      <div ref={projectRef}>
-        <Projects />
-      </div>
-      <div className="section-spacer"></div>
-      <div ref={contactRef}>
-        <Contact />
-      </div>
-      <div className="section-spacer"></div>
-      <Footer />
     </div>
   )
 }

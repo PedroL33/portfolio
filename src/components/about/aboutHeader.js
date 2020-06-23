@@ -10,8 +10,7 @@ function AboutHeader() {
       {
         section ==="about" ? <Typist key={section}>Who I am...</Typist> :
         section ==="skills" ? <Typist key={section}>What I can offer...</Typist> :
-        section ==="interests" ? <Typist key={section}>What I enjoy...</Typist> :
-        <Typist key={section}>My contact info...</Typist>
+        <Typist key={section}>What I enjoy...</Typist>
       }
     </div>
   )

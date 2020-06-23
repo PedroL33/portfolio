@@ -1,17 +1,17 @@
 import React, {useRef, useEffect} from 'react';
 import Aboutnavbar from './aboutnavbar';
 import AboutHeader from './aboutHeader';
+import AboutMe from './aboutMe';
 import Skills from './skills';
 import Interests from './interests';
 import { useSelector } from 'react-redux';
 
-function About() {
+function About(props) {
 
   const containerRef = useRef(null)
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
   const interestsRef = useRef(null)
-  const contactRef = useRef(null)
 
   const sticky = useSelector(state => state.sticky);
 
@@ -23,22 +23,18 @@ function About() {
     <div className={sticky ? "sticky-item": "" }>
       <div className="mx-auto about-section">
         <div className="shadow about-info rounded position-relative">
-          <Aboutnavbar containerRef={containerRef} aboutRef={aboutRef} skillRef={skillRef} interestsRef={interestsRef} contactRef={contactRef} />
+          <Aboutnavbar containerRef={containerRef} aboutRef={aboutRef} skillRef={skillRef} interestsRef={interestsRef} />
           <AboutHeader />
           <div className="about-contents" ref={containerRef}>
             <div className="about-body">
               <div className="about-me" ref={aboutRef}>
-                Hey I'm Peter. I enjoy creating web applications. I am most happy when entangled in an awesome project.
-                I am always looking for new people to work with and learn from.  Check out my portfolio to see some of the stuff I have done!
+                <AboutMe contactRef={props.contactRef} projectRef={props.projectRef}/>
               </div>
               <div className="about-skills" ref={skillRef}>
                 <Skills />
               </div>
               <div className="about-interests" ref={interestsRef}>
                 <Interests />
-              </div>
-              <div className="about-contact" ref={contactRef}>
-                Contact Info
               </div>
             </div>
           </div>
