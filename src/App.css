@@ -795,6 +795,14 @@ textarea {
     width: 80%;
   }
 
+  .contact-form-container {
+    border-radius: 0px 0px 20px 0;
+  }
+
+  .contact-links {
+    padding: 50px 0;
+  }
+
   /* modal */
 
   .project-img-container {
