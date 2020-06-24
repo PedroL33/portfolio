@@ -11,6 +11,17 @@ body {
   padding-top: 50px;
 }
 
+/* Header */
+
+.header-name {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+.header-desc {
+  font-size: 32px;
+}
+
 /* Navbar */
 
 .navbar-sticky {
@@ -653,6 +664,12 @@ body {
   background: #ff9966;
 }
 
+.contact-form-button:hover {
+  background: white;
+  color: #ff9966;
+  border: 1px solid #ff9966;
+}
+
 /* Footer */
 
 .footer-container {
@@ -662,13 +679,6 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 14px;
-}
-
-textarea {
-  width: 100%;
-  font-size: 16px;
-  height: 100px;
-  margin-bottom: 2vh;
 }
 
 .response-error, .response-success {

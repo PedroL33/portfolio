@@ -26,18 +26,21 @@ function Contact() {
         .then(res => res.json())
         .then(response => {
           dispatch(setMessageResponse(response))
-          console.log(response)
         })
       }
     }
 
-    async function handleClick() {
+    async function handleClick(type) {
+      if(type==="success") {
+        setEmail("")
+        setMessage("")
+        messageRef.current.value=""
+        emailRef.current.value=""
+      }
       await dispatch(clearMessageResponse())
-      setEmail("")
-      setMessage("")
-      // messageRef.current.value=""
-      // emailRef.current.value=""
     }
+
+
     
     return (
       <div className="stickyItem contact-section">
@@ -65,11 +68,19 @@ function Contact() {
           <div className="col-md-6 p-0">
             <div className="contact-form-container">
               <div className="contact-form-header">Contact Me</div>
+              {messageResponse.error ? <div className="response-error">
+                <button onClick={()=>handleClick("error")}>Ok</button>
+              </div> :
+              messageResponse.message ? <div className="reponse-success">
+                <div>{messageResponse.message}</div>
+                <button onClick={()=>handleClick("success")}>Ok</button>
+              </div> :
               <div className="contact-form">
                 <input type="text" placeholder="E-mail" onChange={(e)=>{setEmail(e.target.value)}}></input>
                 <textarea placeholder="Message" onChange={(e) => {setMessage(e.target.value)}}></textarea>
                 <button className="contact-form-button" onClick={() => sendMessage()}>Send!</button>
               </div>
+              }
             </div>
           </div>
         </div>

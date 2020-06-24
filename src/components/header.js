@@ -13,10 +13,10 @@ function Header() {
   }
 
   return (
-    <div id="header" className="d-flex justify-content-center flex-column text-center align-items-center" style={style}>
+    <div id="header" className="d-flex justify-content-center flex-column align-items-center" style={style}>
       <div>
-        <h2>Peter Lee</h2>
-        <h2>Software Developer</h2>
+        <div className="header-name">Peter Lee</div>
+        <div className="header-desc">Software Developer</div>
       </div>
       <div className="fixed-page-links">
         <a className="fixed-page-link" href={window.location.origin + "/Resume.pdf"} target="_blank" rel="noopener noreferrer" style={{background: "#ff9966"}}>
