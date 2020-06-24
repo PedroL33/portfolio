@@ -19,15 +19,15 @@ function Header() {
         <h2>Software Developer</h2>
       </div>
       <div className="fixed-page-links">
-        <a className="fixed-page-link" href={window.location.origin + "/Resume.pdf"} target="_blank" style={{background: "#ff9966"}}>
+        <a className="fixed-page-link" href={window.location.origin + "/Resume.pdf"} target="_blank" rel="noopener noreferrer" style={{background: "#ff9966"}}>
           <span aria-hidden="true">Resume</span>
           <i className="far fa-file-pdf"></i>
         </a>
-        <a className="fixed-page-link" href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" style={{background: "#007bb6"}}>
+        <a className="fixed-page-link" href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer" style={{background: "#007bb6"}}>
           <span aria-hidden="true">LinkedIn</span>
           <i className="fab fa-linkedin-in"></i>
         </a>
-        <a className="fixed-page-link" href="https://github.com/PedroL33" target="_blank" style={{background: "#000000"}}>
+        <a className="fixed-page-link" href="https://github.com/PedroL33" target="_blank" rel="noopener noreferrer" style={{background: "#000000"}}>
           <span aria-hidden="true">Github</span>
           <i className="fab fa-github"></i>
         </a>

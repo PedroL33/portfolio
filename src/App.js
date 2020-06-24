@@ -19,9 +19,9 @@ function App() {
   useEffect(() => {
       window.addEventListener('scroll', handleScroll);
       return () => {
-          window.removeEventListener("scroll", () => handleScroll)
+          window.removeEventListener("scroll", () => handleScroll);
       }
-  }, [])
+  })
 
   const handleScroll = () => {
     dispatch(setSticky(navRef.current.getBoundingClientRect().top <= 1));
