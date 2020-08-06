@@ -1,0 +1,30 @@
+.container {
+  height: 10vh;
+  background-color: rgb(128, 128, 128, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.container div {
+  padding: 0 10px;
+  border-right: 1px solid black;
+}
+
+.container div:last-child {
+  border-right: none;
+}
+
+@media screen and (max-width: 1200px) { 
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+  .container div {
+    border: none;
+    text-align: center;
+  }
+}
+

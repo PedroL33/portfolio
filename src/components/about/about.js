@@ -5,6 +5,7 @@ import AboutMe from './aboutMe';
 import Skills from './skills';
 import Interests from './interests';
 import { useSelector } from 'react-redux';
+import styles from '../../styles/about.module.css';
 
 function About(props) {
 
@@ -19,21 +20,22 @@ function About(props) {
     containerRef.current.scrollTo({top: 0})
   }, [])
 
+
   return (
     <div className={sticky ? "sticky-item": "" }>
-      <div className="mx-auto about-section">
-        <div className="shadow about-info rounded position-relative">
+      <div className={styles.container}>
+        <div className={`shadow rounded ${styles.body}`}>
           <Aboutnavbar containerRef={containerRef} aboutRef={aboutRef} skillRef={skillRef} interestsRef={interestsRef} />
           <AboutHeader />
-          <div className="about-contents" ref={containerRef}>
-            <div className="about-body">
-              <div className="about-me" ref={aboutRef}>
+          <div className={styles.contents} ref={containerRef}>
+            <div className={styles.contentBody}>
+              <div className={styles.contentBodyItem} ref={aboutRef}>
                 <AboutMe contactRef={props.contactRef} projectRef={props.projectRef}/>
               </div>
-              <div className="about-skills" ref={skillRef}>
+              <div className={styles.contentBodyItem} ref={skillRef}>
                 <Skills />
               </div>
-              <div className="about-interests" ref={interestsRef}>
+              <div className={styles.contentBodyItem} ref={interestsRef}>
                 <Interests />
               </div>
             </div>

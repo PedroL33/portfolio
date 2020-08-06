@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {setAboutHeader} from '../../actions';
+import styles from '../../styles/about.module.css';
 
 function Aboutnavbar(props) {
 
@@ -16,16 +17,16 @@ function Aboutnavbar(props) {
   }
 
   return (
-    <div className="about-navbar-container shadow"> 
-      <div className={active==="about" ? "about-nav-button active" : "about-nav-button"} onClick={(e) => handleClick(props.aboutRef, "about")}>
+    <div className={`${styles.navbar} shadow`}> 
+      <div className={active==="about" ? `${styles.navButton} ${styles.active}`: styles.navButton} onClick={(e) => handleClick(props.aboutRef, "about")}>
         <i className="fas fa-user"></i>
         <div>About Me</div>
       </div>
-      <div className={active==="skills" ? "about-nav-button active" : "about-nav-button"} onClick={(e) => handleClick(props.skillRef, "skills")}>
+      <div className={active==="skills" ? `${styles.navButton} ${styles.active}`: styles.navButton} onClick={(e) => handleClick(props.skillRef, "skills")}>
         <i className="fab fa-js-square"></i>
         <div>Skills</div>
       </div>
-      <div className={active==="interests" ? "about-nav-button active" : "about-nav-button"} onClick={(e) => handleClick(props.interestsRef, "interests")}>
+      <div className={active==="interests" ? `${styles.navButton} ${styles.active}`: styles.navButton} onClick={(e) => handleClick(props.interestsRef, "interests")}>
         <i className="far fa-star"></i>
         <div>Interests</div>
       </div>

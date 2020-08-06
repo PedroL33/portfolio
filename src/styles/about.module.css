@@ -1,0 +1,166 @@
+.container {
+  padding-top: 50px;
+  margin: auto;
+  width: 1000px;
+  padding: 100px 0 0 50px;
+}
+
+.body {
+  height: 500px;
+  width: 1000px;
+  padding: 0 200px 0 150px;
+  position: relative;
+  font-size: 24px;
+  background: white;
+}
+
+.contents {
+  height: 500px;
+  text-indent: 2em;
+  overflow-y: hidden;
+}
+
+.contentBody {
+  height: 100%;
+}
+
+.contentBodyItem {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; 
+}
+
+.header {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #ff9966;
+  top: 125px;
+  left: -100px;
+  font-size: 48px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar {
+  position: absolute;
+  right: 40px;
+  top: -25px;
+  height: 560px;
+  width: 120px;
+  background: #ff9966;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.navButton {
+  height: 120px;
+  width: 120px;
+  border: 1px solid #ff9966;
+  position: relative;
+  background: #ff9966;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.navButton i {
+  margin: 5px 0;
+  font-size: 28px;
+}
+
+.navButton.active {
+  border-right: 5px solid white;
+}
+
+.navButton.active:before {
+  content:"";
+  border-style: solid;
+  border-width: 60px 15px 60px 0;
+  border-color: transparent #ff9966 transparent transparent;
+  position: absolute;
+  left: -15px;
+  top: 0;
+}
+
+.navButton:hover {
+  background: #fda072;
+  cursor: pointer;
+}
+
+.navButton.active:hover:before {
+  border-color: transparent #fda072 transparent transparent;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 100px 0 0 0;
+  }
+
+  .body {
+    margin:auto;
+    width: 80%;
+    height: 500px;
+    text-align: center;
+    text-indent: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .contents {
+    width: 100%;
+  }
+
+  .header {
+    width: 80%;
+    height: 120px;
+    top: 450px;
+    font-size: 36px;
+    left: 10%;
+  }
+
+  .navbar {
+    flex-direction: row;
+    width: 110%;
+    height: 120px;
+    left: -5%;
+    top: -60px;
+  }
+
+  .navButton {
+    width: 100px;
+  }
+
+  .navButton.active {
+    border-top: 5px solid white;
+    border-right: none;
+  }
+
+  .navButton.active:before {
+    content:"";
+    border-style: solid;
+    border-width: 15px 50px 0px 50px;
+    border-color:#ff9966 transparent #ff9966 transparent;
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+
+  .navButton.active:hover:before {
+    border-color:#fda072 transparent #fda072 transparent;
+  }
+
+}
+
+

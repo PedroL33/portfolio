@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import styles from '../../styles/aboutMe.module.css';
 
 function AboutMe(props) {
 
@@ -16,13 +17,13 @@ function AboutMe(props) {
   }
 
   return (
-    <div className="about-me-container">
-      <div className="about-me-intro">Hey I'm Peter,</div>
-      <div className="about-me-desc">Software Developer located in Washington State, US </div>
-      <div className="about-me-body">
+    <div className={styles.container}>
+      <div className={styles.intro}>Hey I'm Peter,</div>
+      <div className={styles.desc}>Software Developer located in Washington State, US </div>
+      <div className={styles.body}>
         I am most happy when entangled in an awesome project.
-        Check out my <button onClick={()=>handleClick(props.projectRef)}>portfolio</button> to see some of the stuff 
-        I have done and <button onClick={()=>handleClick(props.contactRef)}>let me know what you think!</button>
+        Check out my <div onClick={()=>handleClick(props.projectRef)}>portfolio</div> to see some of the stuff 
+        I have done and <div onClick={()=>handleClick(props.contactRef)}>let me know what you think!</div>
       </div>
     </div>
   )
