@@ -124,6 +124,7 @@
   .container {
     width: 100%;
     flex-direction: column;
+    margin: 20px auto;
   }
   .background {
     border-radius: 0px;

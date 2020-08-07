@@ -8,7 +8,7 @@ body {
 }
 
 .projects-section, .contact-section {
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 .navbar-sticky {
@@ -83,6 +83,7 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+
 
   .modal-dialog {
     width: 90%;

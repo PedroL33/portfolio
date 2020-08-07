@@ -99,10 +99,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   margin: 10px 0;
   width: 210px;
-  border-radius: 20px;
+  border-radius: 10px;
+  height: 200px;
 }
 
 .feature i {
