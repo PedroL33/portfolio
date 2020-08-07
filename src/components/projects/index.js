@@ -1,5 +1,6 @@
 import React from 'react';
 import Project from './project';
+import styles from '../../styles/project.module.css';
 
 function Projects() {
 
@@ -36,8 +37,8 @@ function Projects() {
 
     return (
         <div className="projects-section">
-            <h2 className="text-center mb-5">Projects</h2>
-            <div className="row projects-container"> 
+            <h2 className={styles.header}>Projects</h2>
+            <div className={styles.section}> 
                 <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} img={trImg} icon={trIcon} tech={trTech} />
                 <Project title={smTitle} summary={smSummary} features={smFeatures} links={smLinks} img={smImg} icon={smIcon} tech={smTech} />
                 <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} img={caImg} icon={caIcon} tech={caTech} />

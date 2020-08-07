@@ -8,10 +8,8 @@ body {
 }
 
 .projects-section, .contact-section {
-  padding-top: 50px;
+  padding-top: 25px;
 }
-
-/* Navbar */
 
 .navbar-sticky {
   position: fixed;
@@ -23,62 +21,6 @@ body {
 
 .sticky-item {
   padding-top: 10vh;
-}
-
-/* Projects section */
-
-.projects-container {
-  max-width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.project-container {
-  border-radius: 15px;
-  padding: 20px;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
-  width: 400px;
-  padding: 30px;
-  border-radius: 15px;
-  font-size: 20px;
-}
-
-.project-icon {
-  height: 75px;
-  width: 75px;
-  background-size: 75px 75px;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-}
-
-.project-body h2 {
-  font-weight: 800;
-}
-
-.project-button {
-  border-radius: 7px;
-  border: none;
-  margin: 0 auto;
-  padding: 7px 20px;
-  background: #ff9966;
-  color: white;
-}
-
-.project-button:hover {
-  background: white;
-  color: #ff9966;
-  border: 2px solid #ff9966;
-}
-
-.project-img {
-  width: 100%;
 }
 
 .modal-dialog {
@@ -105,188 +47,6 @@ body {
 .modal-container::-webkit-scrollbar { 
   display: none;
 }
-
-/* Project modal header */
-
-.project-body-header {
-  padding: 0; 
-  width: 90%;
-  margin: 100px auto 0 auto;
-  position: relative;
-}
-
-.project-body-header h2 {
-  font-size: 56px;
-  font-weight: 800;
-  color: #ff9966;
-}
-
-.project-header-summary {
-  padding: 30px;
-  font-size: 24px;
-  color: grey;
-}
-
-.project-img-container {
-  width: 600px;
-  height: auto;
-  margin: 100px auto;
-  padding: 30px;
-  border-radius: 30px;
-  background-color:rgb(230, 230, 230);
-}
-
-/* Project modal features */
-
-.project-features-container {
-  width: 90%;
-  background: white;
-  padding: 50px 0;
-  margin: 50px auto;
-  color: grey;
-}
-
-.project-features-container h2 {
-  text-align: left;
-  text-indent: 40px;
-  font-size: 48px;
-  font-weight: 800;
-  padding: 30px 0;
-}
-
-.feature-container {
-  margin: 10px;
-}
-
-.project-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.feature {
-  padding: 30px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 10px 0;
-  width: 210px;
-  border-radius: 20px;
-}
-
-.feature-desc {
-  overflow-wrap: break-word;
-  font-size: 16px;
-}
-
-.feature i {
-  font-size: 36px;
-  color: #ff9966;
-  padding: 20px;
-}
-
-/* Project modal technologies used */
-
-.tech {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 800px;
-  margin: auto;
-  padding: 30px 0 70px 0;
-}
-
-.tech-item img {
-  width: 100px;
-  padding: 15px;
-}
-
-.tech-item {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  margin: 10px;
-  align-items: center;
-  border-radius: 50%;
-  border: 3px solid rgb(218, 218, 218);
-  background: white;
-}
-
-/* Project modal buttons, fixed page buttons */
-
-.project-links, .fixed-page-links {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-links {
-  position:absolute;
-  align-items: flex-end;
-  top: 30px;
-  right: 0;
-}
-
-.project-link, .fixed-page-link {
-  -webkit-transition: border-radius 1s;
-  transition: border-radius 1s;
-  border: none;
-  margin: 1px 0;
-  border-right: none;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px !important;
-  color: white;
-}
-
-.project-link {
-  background-color: #ff9966;
-}
-
-.project-link i {
-  width: 25px;
-}
-
-.project-link span, .fixed-page-link span {
-  max-width: 0;
-  -webkit-transition: max-width 1s;
-  transition: max-width 1s;
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.project-link:hover, .fixed-page-link:hover {
-  text-decoration: none;
-  color: white; 
-  opacity: 0.7;
-}
-
-.prject-link:hover {
-  border-radius: 10px 0 0 10px;
-}
-
-.project-link:hover span, .fixed-page-link:hover span {
-  max-width: 150px;
-  color: white;
-  padding: 5px 0 0 0;
-}
-
-.project-links a, .fixed-page-links a {
-  padding: 0 24px;
-}
-
-/* About section */
 
 .carousel.slide {
   width: 100%;
@@ -324,21 +84,7 @@ body {
 
 @media screen and (max-width: 1200px) {
 
-  .project-container {
+  .modal-dialog {
     width: 90%;
-  }
-
-  .project {
-    width: 100%;
-  }
-
-  /* modal */
-
-  .project-img-container {
-    width: 90%;
-  }
-
-  .tech {
-    width: 80%;
   }
 }
