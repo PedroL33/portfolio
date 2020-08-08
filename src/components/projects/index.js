@@ -35,13 +35,24 @@ function Projects() {
     const caIcon = "chatapp.png"
     const caTech = ["React", "MongoDB", "NodeJS", "Express", "Neo4j"]
 
+    const amTitle = "Able Moving"
+    const amSummary = "Web site for a local moving company."
+    const amFeatures = [{feature: "Utilizes a zipcode api to allow users to recieve free quotes.", icon: "fas fa-search-location"},
+                        {feature: "Real time open and closed status using the moment library.", icon: "fas fa-store-slash"},
+                        {feature: "Carefuly developed with responsive design in mind.", icon: "fas fa-mobile-alt"}]
+    const amLinks = ["https://dry-brushlands-51041.herokuapp.com/", "https://github.com/PedroL33/able-moving"]
+    const amImg = "amImg.png";
+    const amIcon = "ablemoving.png"
+    const amTech = ["React", "NodeJS", "Express", "Redux"]
+
     return (
         <div className="projects-section">
             <h2 className={styles.header}>Projects</h2>
             <div className={styles.section}> 
-                <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} img={trImg} icon={trIcon} tech={trTech} />
-                <Project title={smTitle} summary={smSummary} features={smFeatures} links={smLinks} img={smImg} icon={smIcon} tech={smTech} />
-                <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} img={caImg} icon={caIcon} tech={caTech} />
+              <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} img={trImg} icon={trIcon} tech={trTech} />
+              <Project title={smTitle} summary={smSummary} features={smFeatures} links={smLinks} img={smImg} icon={smIcon} tech={smTech} />
+              <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} img={caImg} icon={caIcon} tech={caTech} />
+              <Project title={amTitle} summary={amSummary} features={amFeatures} links={amLinks} img={amImg} icon={amIcon} tech={amTech} />
             </div>
         </div>
     )
