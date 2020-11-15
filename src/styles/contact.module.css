@@ -43,9 +43,10 @@
 
 .formContainer {
   height: 600px;
+  width: 50%;
   margin: auto;
   border-radius: 0 20px 20px 0;
-  padding: 50px 25px;
+  padding: 50px 15px;
   background: white;
   z-index: 2;
 }
