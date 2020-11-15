@@ -7,7 +7,7 @@ body {
   height: 250px;
 }
 
-.projects-section, .contact-section {
+.contact-section {
   padding-top: 20px;
 }
 
@@ -17,10 +17,6 @@ body {
   left: 0;
   z-index:19;
   background-color: white;
-}
-
-.sticky-item {
-  padding-top: 10vh;
 }
 
 .modal-dialog {
@@ -35,7 +31,7 @@ body {
   border-radius: 0;
   margin: auto;
   overflow: auto;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(243, 243, 243);
 }
 
 .modal-container {
@@ -73,7 +69,7 @@ body {
 .page-content {
   width: 2000px;
   margin: auto;
-  background: rgb(243, 243, 243);
+  background: rgb(254, 254, 254);
 }
 
 @media screen and (max-width: 2000px) {

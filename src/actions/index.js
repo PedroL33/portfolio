@@ -29,19 +29,6 @@ export const setSticky = (isSticky) => {
     }
 }
 
-export const setText = (text) => {
-    return {
-        type: "SET_TEXT",
-        payload: text
-    }
-}
-
-export const clearText = () => {
-    return {
-        type: "CLEAR_TEXT"
-    }
-}
-
 export const setMessageResponse = (response) => {
     return {
         type: "SET_MESSAGE_RESPONSE",

@@ -22,7 +22,7 @@ function About(props) {
 
 
   return (
-    <div className={sticky ? "sticky-item": "" }>
+    <div>
       <div className={styles.container}>
         <div className={`shadow rounded ${styles.body}`}>
           <Aboutnavbar containerRef={containerRef} aboutRef={aboutRef} skillRef={skillRef} interestsRef={interestsRef} />

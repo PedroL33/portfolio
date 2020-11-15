@@ -7,10 +7,11 @@ import About from './components/about/about';
 import Contact from './components/contact';
 import Footer from './components/footer';
 import {setSticky, currentToAbout, currentToContact, currentToProjects, currentReset} from './actions/index';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
+  const sticky = useSelector(state => state.sticky);
   const navRef = useRef(null);
   const projectRef = useRef(null);
   const aboutRef = useRef(null);
@@ -24,18 +25,17 @@ function App() {
   })
 
   const handleScroll = () => {
-    dispatch(setSticky(navRef.current.getBoundingClientRect().top <= 1));
-    const project = projectRef.current.getBoundingClientRect().top
-    const about = aboutRef.current.getBoundingClientRect().top 
-    const contact = contactRef.current.getBoundingClientRect().top 
-    if(about <= document.documentElement.clientHeight * 0.11 && project >= document.documentElement.clientHeight) {
-      dispatch(currentToAbout())
-    }else if(project <= document.documentElement.clientHeight * 0.11 && contact >= document.documentElement.clientHeight) {
-      dispatch(currentToProjects())
-    } else if(contact <= document.documentElement.clientHeight * .11) {
-      dispatch(currentToContact())
-    } else if(about >= 0) {
+    dispatch(setSticky(window.pageYOffset > window.innerHeight * 0.5));
+    const project = projectRef.current.getBoundingClientRect().bottom
+    const about = aboutRef.current.getBoundingClientRect().bottom 
+    if(!sticky) {
       dispatch(currentReset())
+    }else if(project <= 0 && about <= 0) {
+      dispatch(currentToContact())
+    }else if(project <= 0) {
+      dispatch(currentToAbout())
+    } else if(project > 0) {
+      dispatch(currentToProjects())
     }
   }
 
@@ -46,12 +46,12 @@ function App() {
         <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
       </div>
       <div className="page-content">
-        <div ref={aboutRef}>
-          <About projectRef={projectRef} contactRef={contactRef}/>
-        </div>
-        <div className="section-spacer"></div>
         <div ref={projectRef}>
           <Projects />
+        </div>
+        <div className="section-spacer"></div>
+        <div ref={aboutRef}>
+          <About projectRef={projectRef} contactRef={contactRef}/>
         </div>
         <div className="section-spacer"></div>
         <div ref={contactRef}>

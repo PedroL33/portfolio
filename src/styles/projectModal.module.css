@@ -32,12 +32,14 @@
   height: auto;
   margin: 50px auto;
   padding: 30px;
-  border-radius: 30px;
+  border-radius: 15px;
   background-color:rgb(230, 230, 230);
+  box-sizing: border-box;
 }
 
 .image {
   width: 100%;
+  padding: 10px;
 }
 
 .tech {
