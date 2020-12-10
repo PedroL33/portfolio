@@ -13,7 +13,7 @@ function Header() {
         <div className={styles.desc}>Full Stack Developer focused on creating simple and efficient solutions.</div>
       </div>
       <div className={styles.fixedLinks}>
-        <a className={styles.fixedLink} href={window.location.origin + "/Resume.docx"} target="_blank" rel="noopener noreferrer" style={{background: "#ff9966"}}>
+        <a className={styles.fixedLink} href={window.location.origin + "/Resume.pdf"} target="_blank" rel="noopener noreferrer" style={{background: "#ff9966"}}>
           <span aria-hidden="true">Resume</span>
           <i className="far fa-file-pdf"></i>
         </a>
