@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import styles from '../../styles/projectModal.module.css';
-import linkStyles from '../../styles/header.module.css';
 
 function Modal(props) {
 
@@ -14,20 +13,18 @@ function Modal(props) {
     <div className="modal fade modal-container" id={`${props.title}-modal`} tabIndex="-1" role="dialog" aria-hidden="true">
       <div className="modal-dialog modal-lg" role="document">
         <div className="modal-content">
-          <div className={linkStyles.projectLinks}>
-            <button type="button" className={linkStyles.projectLink} data-dismiss="modal" aria-label="Close" onClick={() => handleClick()}>
-              <i className="fas fa-times"></i><span aria-hidden="true">&nbsp;Close</span>
-            </button>
-            <a href={props.links[1]} target="_blank" rel="noopener noreferrer" className={linkStyles.projectLink}>
-              <i className="fab fa-github"></i><span>&nbsp;Repo</span>
-            </a>
-            <a href={props.links[0]} target="_blank" rel="noopener noreferrer" className={linkStyles.projectLink}>
-              <i className="fas fa-play"></i><span>&nbsp;Live</span>
-            </a>
-          </div>
+          <button type="button" className={styles.closeButton} data-dismiss="modal" aria-label="Close" onClick={() => handleClick()}>
+            <i className="fas fa-times"></i>
+          </button>
           <div className={styles.container} ref={modalRef}>
             <div className={styles.header}>
-              <h2>{props.title}</h2>
+              <div className={styles.top}>
+                <h2>{props.title}</h2>
+                <div className={styles.links}>
+                  <a href={props.links[0]} target="_blank" rel="noopener noreferrer" className={`${styles.link} fas fa-play`}></a>
+                  <a href={props.links[1]} target="_blank" rel="noopener noreferrer" className={`${styles.link} fab fa-github`}></a>
+                </div>
+              </div>
               <hr />
               <div className={styles.summary}>{props.summary}</div>
             </div>
@@ -45,7 +42,7 @@ function Modal(props) {
               <h2>Features...</h2>
               <div className={styles.features}>
                 {props.features.map(item => (<div className={styles.featureContainer} key={item.icon}> 
-                  <div className={`${styles.feature} shadow`}>
+                  <div className={`${styles.feature}`}>
                     <i className={item.icon}></i> 
                     <div className={styles.featureDesc}>{item.feature}</div>
                   </div>

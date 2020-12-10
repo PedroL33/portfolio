@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(50vh);
+  height: 90vh;
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,34 +25,24 @@
 .desc {
   width: 90%;
   margin: auto;
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
-  font-weight: 200;
+  font-weight: 800;
 }
 
-.fixedLinks, .projectLinks {
+.fixedLinks {
   font-size: 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
   z-index: 3;
-}
-
-.fixedLinks {
   position: fixed;
   top: 50%; 
   left: 0;
   align-items: flex-start;
 }
 
-.projectLinks {
-  position:absolute;
-  align-items: flex-end;
-  top: 30px;
-  right: 0;
-}
-
-.fixedLink, .projectLink {
+.fixedLink {
   transition: border-radius 1s;
   border: none;
   margin: 1px 0;
@@ -71,15 +61,7 @@
   padding: 10px;
 }
 
-.projectLink i {
-  width: 25px;
-}
-
-.projectLink {
-  background-color: #ff9966;
-}
-
-.fixedLink span, .projectLink span {
+.fixedLink span {
   max-width: 0;
   -webkit-transition: max-width 1s;
   transition: max-width 1s;
@@ -92,27 +74,21 @@
   font-weight: 800;
 }
 
-.fixedLink:hover, .projectLink:hover {
+.fixedLink:hover {
   text-decoration: none;
   color: white; 
   opacity: 1;
-}
-
-.fixedLink:hover {
   border-radius: 0 15px 15px 0;
 }
 
-.projectLink:hover {
-  border-radius: 15px 0 0 15px;
-}
 
-.fixedLink:hover span, .projectLink:hover span {
+.fixedLink:hover span {
   max-width: 150px;
   color: white;
   padding: 5px 0 0 0;
 }
 
-.fixedLink a, .projectLink a {
+.fixedLink a {
   padding: 0 24px;
 }
 

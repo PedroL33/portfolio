@@ -6,13 +6,17 @@ function Project(props) {
 
     return (
       <div className={styles.container}>
-        <div className={styles.blur} style={{backgroundImage: `url(${window.location.origin}/images/${props.img})`}}></div>
-        <div className={`${styles.body} shadow`}>
-          <div className={styles.content}>
+        <div className={styles.body}>
+          <div className={styles.blur} style={{backgroundImage: `url(${window.location.origin}/images/${props.img})`}}></div>
+          <div className={styles.overlay}>
+            <div className={styles.title}>{props.title}</div>
+            <div className={styles.links}>
+              <button className={styles.link} data-toggle="modal" data-target={`#${props.title}-modal`}>Details</button>
+              <a className={styles.link} href={props.links[0]} target="_blank" rel="noopener noreferrer">Live</a>
+            </div>
           </div>
-          <button className={styles.button} data-toggle="modal" data-target={`#${props.title}-modal`}>{props.title}</button>
-          <Modal summary={props.summary} title={props.title} features={props.features} tech={props.tech} links={props.links} modalImg={props.modalImg} img={props.img} />
         </div>
+        <Modal summary={props.summary} title={props.title} features={props.features} tech={props.tech} links={props.links} modalImg={props.modalImg} img={props.img} />
       </div>
     )
 }

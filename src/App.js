@@ -25,17 +25,17 @@ function App() {
   })
 
   const handleScroll = () => {
-    dispatch(setSticky(window.pageYOffset > window.innerHeight * 0.5));
+    dispatch(setSticky(window.pageYOffset > window.innerHeight * 0.9));
     const project = projectRef.current.getBoundingClientRect().bottom
     const about = aboutRef.current.getBoundingClientRect().bottom 
     if(!sticky) {
       dispatch(currentReset())
-    }else if(project <= 0 && about <= 0) {
+    }else if(about <= 0 && project <= 0) {
       dispatch(currentToContact())
-    }else if(project <= 0) {
-      dispatch(currentToAbout())
-    } else if(project > 0) {
+    }else if(about <= 0) {
       dispatch(currentToProjects())
+    }else if(about > 0) {
+      dispatch(currentToAbout())
     }
   }
 
@@ -46,13 +46,13 @@ function App() {
         <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
       </div>
       <div className="page-content">
-        <div ref={projectRef}>
-          <Projects />
-        </div>
-        <div className="section-spacer"></div>
         <div ref={aboutRef}>
           <About projectRef={projectRef} contactRef={contactRef}/>
         </div>
+        <div className="section-spacer"></div>
+          <div ref={projectRef}>
+            <Projects />
+          </div>
         <div className="section-spacer"></div>
         <div ref={contactRef}>
           <Contact />

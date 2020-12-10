@@ -46,21 +46,9 @@ function Contact() {
         <div className={`${styles.container} shadow`}>
           <div className={styles.background} style={{backgroundImage: "url("+window.location.origin+"/images/background.jpg)"}}></div>
           <ul className={styles.linkContainer}>
-            <li>
-              <a className={styles.link} href="mailto: leepeter019@gmail.com" data-toggle="tooltip" data-placement="top" title="E-mail" target="_blank" rel="noopener noreferrer">
-                <i className="fas fa-envelope-square"></i>
-              </a>
-            </li>
-            <li>
-              <a className={styles.link} href="https://www.linkedin.com/in/peter-lee-2973371a4/" data-toggle="tooltip" data-placement="top" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-            <li>
-              <a className={styles.link} href="https://github.com/PedroL33" data-toggle="tooltip" data-placement="top" title="Github" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github"></i>
-              </a>
-            </li>
+            <a className={`fas fa-envelope-square ${styles.link}`} href="mailto: leepeter019@gmail.com" data-toggle="tooltip" data-placement="top" title="E-mail" target="_blank" rel="noopener noreferrer"></a>
+            <a className={`fab fa-linkedin-in ${styles.link}`} href="https://www.linkedin.com/in/peter-lee-2973371a4/" data-toggle="tooltip" data-placement="top" title="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+            <a className={`fab fa-github ${styles.link}`} href="https://github.com/PedroL33" data-toggle="tooltip" data-placement="top" title="Github" target="_blank" rel="noopener noreferrer"></a>
           </ul>
           <div className={styles.formContainer}>
             <div className={styles.header}>Contact Me</div>
