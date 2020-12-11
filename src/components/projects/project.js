@@ -11,8 +11,22 @@ function Project(props) {
           <div className={styles.overlay}>
             <div className={styles.title}>{props.title}</div>
             <div className={styles.links}>
-              <button className={styles.link} data-toggle="modal" data-target={`#${props.title}-modal`}>Details</button>
-              <a className={styles.link} href={props.links[0]} target="_blank" rel="noopener noreferrer">Live</a>
+              <div className={styles.buttonContainer}>
+                <button className={styles.link} data-toggle="modal" data-target={`#${props.title}-modal`}>
+                  <div className={styles.buttonTitle}>Learn more</div>
+                  <div className={styles.buttonIcon}>
+                    <i className="fas fa-play"></i>
+                  </div>
+                </button>
+              </div>
+              <div className={styles.buttonContainer}>
+                <a className={styles.link} href={props.links[0]} target="_blank" rel="noopener noreferrer">
+                  <div className={styles.buttonTitle}>Live</div>
+                  <div className={styles.buttonIcon}>
+                    <i className="fas fa-play"></i>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>

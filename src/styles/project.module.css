@@ -96,11 +96,14 @@
 
 .links {
   display: flex;
+  flex-direction: column;
   transform: scale(0);
   position: absolute;
   justify-content: center;
+  align-items: center;
   z-index: 2;
   transition: all 300ms ease;
+  width: 70%;  
 }
 
 .body:hover .links {
@@ -111,22 +114,62 @@
   display: none;
 }
 
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 7px;
+}
+
+.buttonIcon {
+  background: #e78b5d;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin: 0;
+  transition: all 300ms ease;
+}
+
+.buttonIcon i {
+  font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.buttonTitle {
+  width: calc(100% - 55px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
 .link {
+  display: flex;
   background: #ff9966;
   border: none;
-  border-radius: 30px;
   color: white;
-  width: 100px;
-  padding: 10px 0;
-  margin: 5px;
-  text-align: center;
-  font-size: 24px;
+  width: 90%;
+  height: 55px;
+  padding: 0;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
 }
 
 .link:hover {
   text-decoration: none;
   color: white;
   background: #f18f5e;
+}
+
+.link:hover .buttonIcon {
+  background: #d17d53;
+}
+
+.link:hover .buttonIcon i {
+  transform: scale(1.4);
 }
 
 @media screen and (max-width: 1200px) { 
