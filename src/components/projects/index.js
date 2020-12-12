@@ -5,7 +5,7 @@ import styles from '../../styles/project.module.css';
 function Projects() {
 
     const trTitle = "RaceTyper"
-    const trSummary = "A typing speed improvement aid. Built with React and Node.js"
+    const trSummary = "A clone of racetyper, an educational speed typing game."
     const trFeatures = [{feature:"Token based authentication", icon: "fas fa-lock"}, 
                         {feature: "RESTful API backend to store user data.", icon: "fas fa-database"},
                         {feature:"Animations using the React-Spring library", icon: "fas fa-object-group"}]
@@ -15,7 +15,7 @@ function Projects() {
     const trTech = ["React", "NodeJS", "MongoDB", "Express", "Redux"]
 
     const ecTitle = "Ecommerce"
-    const ecSummary = "A customizable ecommerce website with a simple backend user interface."
+    const ecSummary = "A fully functional online store with a backend user interface."
     const ecFeatures = [{feature: "Secure payments with stripe.", icon: "fas fa-lock"}, 
                         {feature:"Photo upload using AWS EC2", icon: "fas fa-camera"}, 
                         {feature:"Admin dashboard to view orders and update products.", icon: "far fa-envelope"}];
@@ -25,7 +25,7 @@ function Projects() {
     const ecTech = ["React", "MongoDB", "NodeJS", "Express", "Stripe"]
 
     const caTitle = "ChatApp"
-    const caSummary = "Socialize with your friends in real time.  Created with Node.js, React, and Socket.io."
+    const caSummary = "A realtime chat platform with social networking capabilities."
     const caFeatures = [{feature: "A scalable friendship model using a Neo4j graph database", icon: "fas fa-bezier-curve"},
                         {feature: "Persistent messages stored in MongoDB", icon: "far fa-envelope"},
                         {feature: "Realtime friend updates through SocketIO", icon: "fas fa-history"},
@@ -36,7 +36,7 @@ function Projects() {
     const caTech = ["React", "MongoDB", "NodeJS", "Express", "Neo4j"]
 
     const amTitle = "Able Moving"
-    const amSummary = "Web site for a local moving company."
+    const amSummary = "Web site for a local moving company focused on clean design and simple UI."
     const amFeatures = [{feature: "Utilizes a zipcode api to allow users to recieve free quotes.", icon: "fas fa-search-location"},
                         {feature: "Real time open and closed status using the moment library.", icon: "fas fa-store-slash"},
                         {feature: "Carefuly developed with responsive design in mind.", icon: "fas fa-mobile-alt"}]

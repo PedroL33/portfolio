@@ -1,5 +1,5 @@
 body {
-  font-family: 'Amiri', serif;
+  /* font-family: 'Amiri', serif; */
 }
 
 .section-spacer {
@@ -79,8 +79,6 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-
-
   .modal-dialog {
     width: 90%;
   }

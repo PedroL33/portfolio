@@ -28,13 +28,12 @@ function Modal(props) {
               <hr />
               <div className={styles.summary}>{props.summary}</div>
             </div>
-            <div className={`${styles.imageContainer} shadow`}>
+            <div className={styles.imageContainer}>
               <img className={styles.image} alt={`${props.title} landing page.`} src={window.location.origin + "/images/" + props.modalImg}></img>
             </div>
             <div className={styles.tech}>
               {props.tech.map(item => (
-                <div className={styles.techItem} key={item}>
-                  <img alt={`${item} logo.`}src={window.location.origin + "/images/" + item + ".png"} />
+                <div className={styles.techItem} key={item} style={{backgroundImage: `url(${window.location.origin}/images/${item}.png)`}}>
                 </div>
               ))}
             </div>
