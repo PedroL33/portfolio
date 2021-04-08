@@ -46,9 +46,8 @@ function Projects() {
     const amTech = ["React", "NodeJS", "Express", "Redux"]
 
     return (
-        <div className="projects-section">
+        <div>
           <div className={styles.header}>
-            <div className={styles.sectionTitle}>PORTFOLIO</div>
             <div className={styles.sectionDescription}>Here are some of the things I have recently worked on.</div>
           </div>
           <div className={styles.section}> 
