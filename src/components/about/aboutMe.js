@@ -20,8 +20,7 @@ function AboutMe(props) {
     <div className={styles.container}>
       <div className={styles.intro}>Hey I'm Peter,</div>
       <div className={styles.desc}>Software Developer located in Washington State, US </div>
-      <div className={styles.body}>
-        I am most happy when entangled in an awesome project.
+      <div className={styles.body}> 
         Check out my <div onClick={()=>handleClick(props.projectRef)}>portfolio</div> to see some of the stuff 
         I have done and <div onClick={()=>handleClick(props.contactRef)}>let me know what you think!</div>
       </div>
