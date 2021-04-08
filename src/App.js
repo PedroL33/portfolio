@@ -1,4 +1,11 @@
 import React, {useRef, useEffect} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Login from './components/admin/login';
 import './App.css';
 import Nav from './components/nav';
 import Header from './components/header';
@@ -40,27 +47,36 @@ function App() {
   }
 
   return (
-    <div>
-      <Header />
-      <div ref={navRef}>
-        <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
-      </div>
-      <div className="page-content">
-        <div ref={aboutRef}>
-          <About projectRef={projectRef} contactRef={contactRef}/>
-        </div>
-        <div className="section-spacer"></div>
-          <div ref={projectRef}>
-            <Projects />
+    <Router>
+      <Switch>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route path="/">
+          <div>
+            <Header />
+            <div ref={navRef}>
+              <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />
+            </div>
+            <div className="page-content">
+              <div ref={aboutRef}>
+                <About projectRef={projectRef} contactRef={contactRef}/>
+              </div>
+              <div className="section-spacer"></div>
+                <div ref={projectRef}>
+                  <Projects />
+                </div>
+              <div className="section-spacer"></div>
+              <div ref={contactRef}>
+                <Contact />
+              </div>
+              <div className="section-spacer"></div>
+              <Footer />
+            </div>
           </div>
-        <div className="section-spacer"></div>
-        <div ref={contactRef}>
-          <Contact />
-        </div>
-        <div className="section-spacer"></div>
-        <Footer />
-      </div>
-    </div>
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
