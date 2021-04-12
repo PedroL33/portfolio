@@ -2,8 +2,7 @@ import React, {useRef, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Login from './components/admin/login';
 import './App.css';
