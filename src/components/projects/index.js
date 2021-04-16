@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Project from './project';
 import styles from '../../styles/project.module.css';
+import checkAuth from '../../actions/checkAuth';
+import AddProject from '../admin/addProjects/addProject';
+import { getProjects } from '../../actions';
 
 function Projects() {
 
@@ -45,6 +49,12 @@ function Projects() {
     const amModalImg = "amImg.png"
     const amTech = ["React", "NodeJS", "Express", "Redux"]
 
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(getProjects());
+    }, [])
+
     return (
         <div>
           <div className={styles.header}>
@@ -55,6 +65,7 @@ function Projects() {
             <Project title={caTitle} summary={caSummary} features={caFeatures} links={caLinks} img={caImg} modalImg={caModalImg} tech={caTech} />
             <Project title={amTitle} summary={amSummary} features={amFeatures} links={amLinks} img={amImg} modalImg={amModalImg} tech={amTech} />
             <Project title={trTitle} summary={trSummary} features={trFeatures} links={trLinks} img={trImg} modalImg={trModalImg} tech={trTech} />
+            {checkAuth() ? <AddProject /> :null}
           </div>
         </div>
     )

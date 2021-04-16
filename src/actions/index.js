@@ -48,3 +48,42 @@ export const setAboutHeader = (section) => {
     payload: section
   }
 }
+
+export const getProjectStart = () => {
+  return {
+    type: "GET_PROJECT_START"
+  }
+}
+
+export const getProjectSuccess = (projects) => {
+  return {
+    type: "GET_PROJECT_SUCCESS", 
+    payload: projects
+  }
+}
+
+export const getProjectError = (errors) => {
+  return {
+    type: "GET_PROJECT_ERROR",
+    payload: errors
+  }
+}
+
+export const getProjects = () => {
+  return dispatch => {
+    dispatch(getProjectStart());
+    fetch('http://localhost:3000/project/all', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then( data => {
+        dispatch(getProjectSuccess(data))
+    })
+    .catch(err => {
+        dispatch(getProjectError(err))
+    })
+  }
+}

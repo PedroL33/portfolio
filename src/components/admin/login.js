@@ -28,7 +28,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.form}>
-        {loginStatus.msg=="Authentication failed." ? <span>Auth failed.</span>: null}
+        {loginStatus.errors ? <span>Auth failed.</span>: null}
         <input onChange={(e) => setUn(e.target.value)} placeholder="Username" className={styles.username} type="text"></input>
         <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className={styles.password}></input>
         <button onClick={e => handleClick(e)} className={styles.submit}>Login</button>

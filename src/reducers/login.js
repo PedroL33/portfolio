@@ -1,4 +1,4 @@
-const loginReducer = (state="", action) => {
+const loginReducer = (state={}, action) => {
   switch(action.type) {
     case "POST_LOGIN_ERROR":
       return action.payload

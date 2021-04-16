@@ -14,7 +14,7 @@ function Contact() {
 
     function sendMessage() {
       if(message && message.length > 1) {
-        fetch('https://glacial-reef-28775.herokuapp.com/', {
+        fetch('https://glacial-reef-28775.herokuapp.com/newMessage', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -24,12 +24,14 @@
 }
 
 .container {
-  /* padding-top: 25%; */
   width: 25%;
   margin: 20px;
   position: relative; 
   overflow: hidden;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .siteImg {
