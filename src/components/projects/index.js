@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Project from './project';
-import styles from '../../styles/project.module.css';
+import styles from '../../styles/projectIndex.module.css';
 import checkAuth from '../../actions/checkAuth';
 import AddProject from '../admin/addProjects/addProject';
 import { getProjects } from '../../actions';

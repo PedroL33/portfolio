@@ -4,7 +4,6 @@ import AboutHeader from './aboutHeader';
 import AboutMe from './aboutMe';
 import Skills from './skills';
 import Interests from './interests';
-import { useSelector } from 'react-redux';
 import styles from '../../styles/about.module.css';
 
 function About(props) {
@@ -13,8 +12,6 @@ function About(props) {
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
   const interestsRef = useRef(null)
-
-  const sticky = useSelector(state => state.sticky);
 
   useEffect(() => {
     containerRef.current.scrollTo({top: 0})

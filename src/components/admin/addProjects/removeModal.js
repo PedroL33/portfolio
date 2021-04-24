@@ -43,7 +43,7 @@ function RemoveModal() {
   async function handleSubmit() {
     let projects = []
     Object.keys(remove).forEach(item => {
-      if(remove[item] == 1) {
+      if(remove[item] === 1) {
         projects.push(item);
       }
     })
