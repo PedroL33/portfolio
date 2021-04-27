@@ -7,6 +7,8 @@ import loginReducer from './login';
 import addProjectReducer from './addProject';
 import getProjectReducer from './getProject';
 import deleteProjectReducer from './deleteProject';
+import modalImg from './modalImg';
+import thumbImg from './thumbImg';
 
 const rootReducer = combineReducers({
     currentPage: currentPageReducer,
@@ -16,7 +18,9 @@ const rootReducer = combineReducers({
     loginStatus: loginReducer,
     addProject: addProjectReducer,
     projects: getProjectReducer,
-    deleteProject: deleteProjectReducer
+    deleteProject: deleteProjectReducer,
+    thumbImg,
+    modalImg
 })
 
 export default rootReducer;

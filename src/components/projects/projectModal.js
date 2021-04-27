@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../../styles/project.module.css';
 import Modal from 'react-bootstrap/Modal';
+import UploadImage from '../admin/uploadImage';
 
 function ProjectModal(props) {
 
-  const backgroundImage = props.modalImg ? props.modalImg: `${window.location.origin}/images/noImage.jpg`;
+  const modalImg = useSelector(state => state.modalImg)
+  const backgroundImage = modalImg.length ? modalImg: props.project.modalImg ? props.project.modalImg: `${window.location.origin}/images/noImage.jpg`;
 
   const headerStyles = {
     backgroundImage: `url(${backgroundImage})`,
@@ -32,6 +35,7 @@ function ProjectModal(props) {
       >
         <Modal.Header style={headerStyles}>
           <div className={styles.headerContainer}>
+            <UploadImage type="modal" id={props.project._id} />
             <i onClick={()=>props.setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
             <div className={styles.header}>
               <div className={styles.modalTitle}>{props.project.title}</div>

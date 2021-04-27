@@ -65,6 +65,32 @@ export const clearDeleteProject = () => {
   }
 }
 
+export const setThumbImg = (url) => {
+  return {
+    type: "SET_THUMB_IMG",
+    payload: url
+  }
+}
+
+export const clearThumbImg = () => {
+  return {
+    type: "CLEAR_THUMB_IMG"
+  }
+}
+
+export const setModalImg = (url) => {
+  return {
+    type: "SET_MODAL_IMG",
+    payload: url
+  }
+}
+
+export const clearModalImg = () => {
+  return {
+    type: "CLEAR_MODAL_IMG"
+  }
+}
+
 export const login = (username, password) => {
   return dispatch => {
     console.log(username)
@@ -140,9 +166,12 @@ export const deleteProject = (projects) => {
   }
 }
 
-export const uploadThumbnail = (id, photo) => {
+export const uploadImage = (id, photo, type) => {
+
+  const url = type=="thumbnail" ? `http://localhost:3000/project/thumbnail/${id}`: `http://localhost:3000/project/modal/${id}`
+
   return async function(dispatch) {
-    await fetch(`http://localhost:3000/project/thumbnail/${id}`, {
+    await fetch(url, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer: ${localStorage.getItem("token")}`,
