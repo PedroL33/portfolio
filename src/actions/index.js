@@ -70,20 +70,19 @@ export const getProjectError = (errors) => {
 }
 
 export const getProjects = () => {
-  return dispatch => {
+  return async dispatch => {
     dispatch(getProjectStart());
-    fetch('http://localhost:3000/project/all', {
+    const res = await fetch('http://localhost:3000/project/all', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(res => res.json())
-    .then( data => {
-        dispatch(getProjectSuccess(data))
-    })
-    .catch(err => {
-        dispatch(getProjectError(err))
-    })
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(getProjectError(data))
+    }else {
+      dispatch(getProjectSuccess(data))
+    }
   }
 }

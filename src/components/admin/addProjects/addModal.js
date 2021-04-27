@@ -19,7 +19,6 @@ function AddModal() {
     if(addStatus.success) {
       setShow(false);
       dispatch(addProjectClear());
-      dispatch(getProjects());
     }
   }, [addStatus])
 
@@ -27,8 +26,9 @@ function AddModal() {
     return title.length > 3 && description.length > 3 && gitLink.length > 3 && liveLink.length > 3;
   }
 
-  function handleClick() {
-    dispatch(addProject(title, description, gitLink, liveLink));
+  async function handleClick() {
+    await dispatch(addProject(title, description, gitLink, liveLink));
+    dispatch(getProjects());
   }
 
   function handleHide() {
@@ -45,6 +45,7 @@ function AddModal() {
         show={show}
         onHide={() => handleHide()}
         dialogClassName="modal-90w"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title>

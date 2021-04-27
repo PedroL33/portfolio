@@ -1,4 +1,4 @@
-
+import { getProjects } from './index';
 export const loginError = (errors) => {
   return {
     type: "POST_LOGIN_ERROR",
@@ -94,9 +94,9 @@ export const login = (username, password) => {
 }
 
 export const addProject = (title, desc, git, live) => {
-  return dispatch => {
+  return async (dispatch) => {
     dispatch(addProjectStart())
-    fetch('http://localhost:3000/project/new', {
+    const res = await fetch('http://localhost:3000/project/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
@@ -109,24 +109,19 @@ export const addProject = (title, desc, git, live) => {
             liveLink: live
         })
     })
-    .then(res => res.json())
-    .then( data => {
-      if(data.errors) {
-        dispatch(addProjectError(data))
-      }else {
-        dispatch(addProjectSuccess(data))
-      }
-    })
-    .catch(err => {
-      dispatch(addProjectError({errors: err}))
-    })
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(addProjectError(data))
+    }else {
+      dispatch(addProjectSuccess(data))
+    }
   }
 }
 
 export const deleteProject = (projects) => {
-  return dispatch => {
+  return async (dispatch) => {
     dispatch(deleteProjectStart())
-    fetch("http://localhost:3000/project/delete", {
+    const res = await fetch("http://localhost:3000/project/delete", {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json', 
@@ -136,13 +131,23 @@ export const deleteProject = (projects) => {
           projects
       })
     })
-    .then(res => res.json())
-    .then( data => {
-      if(data.errors) {
-        dispatch(deleteProjectError(data))
-      }else {
-        dispatch(deleteProjectSuccess(data))
-      }
-    }) 
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(deleteProjectError(data))
+    }else {
+      dispatch(deleteProjectSuccess(data))
+    }
+  }
+}
+
+export const uploadThumbnail = (id, photo) => {
+  return async function(dispatch) {
+    await fetch(`http://localhost:3000/project/thumbnail/${id}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer: ${localStorage.getItem("token")}`,
+      },
+      body: photo
+    })
   }
 }

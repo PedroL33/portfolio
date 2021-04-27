@@ -15,7 +15,6 @@ function RemoveModal() {
 
   useEffect(() => {
     if(deleteResponse.success) {
-      dispatch(clearDeleteProject())
       handleHide();
     }
   }, [deleteResponse])
@@ -48,7 +47,7 @@ function RemoveModal() {
       }
     })
     await dispatch(deleteProject(projects))
-    await dispatch(getProjects())
+    dispatch(getProjects())
   }
 
   return (
@@ -60,6 +59,7 @@ function RemoveModal() {
       <Modal
         show={show}
         onHide={() => handleHide()}
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title>

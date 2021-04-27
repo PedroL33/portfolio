@@ -1,90 +1,64 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from '../../styles/project.module.css';
-import Modal from 'react-bootstrap/Modal';
+import checkAuth from '../../actions/checkAuth';
+import { uploadThumbnail } from '../../actions/admin';
+import { getProjects } from '../../actions';
+import ProjectModal from './projectModal';
 
 function Project(props) {
 
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);  
+  const [image, setImage] = useState(null)
+  const [imgUrl, setImgUrl] = useState("");
 
-  const headerStyles = {
-    backgroundImage: "url("+window.location.origin+"/images/"+props.modalImg,
-    padding: "0"
+  const handleChange = (e) => {
+    if(e.target.files && e.target.files[0]) {
+      setImgUrl(window.URL.createObjectURL(e.target.files[0]))
+      setImage(e.target.files)
+    }
   }
 
-  const bodyStyles = {
-    padding: "0"
+  const clearImg = () => {
+    setImgUrl("")
+    setImage(null)
   }
 
-  const getColor = () => {
-    return "hsl(" + 360 * Math.random() + ',' +
-    (25 + 70 * Math.random()) + '%,' + 
-    (85 + 10 * Math.random()) + '%)';
-  } 
+  const savePhoto = async () => {
+    let fd = new FormData();
+    fd.append("image", image[0])
+    await dispatch(uploadThumbnail(props.project._id, fd))
+    setImage(null);
+    setImgUrl(null);
+    dispatch(getProjects());
+  }
 
   return (
     <div className={styles.container}>
-      <img className={styles.siteImg} alt={`Landing page of ${props.title}`} src={`${window.location.origin}/images/${props.img}`}></img>  
+      <img className={styles.siteImg} alt={`Landing page of ${props.project.title}`} src={image ? imgUrl: props.project.thumbImg ? props.project.thumbImg: `${window.location.origin}/images/noImage.jpg`} /> 
       <div className={styles.body}>
         <div className={styles.overlay}>
-        <button className={styles.title} onClick={() => setShow(true)}>
-          {props.title}
-        </button>
+          {checkAuth() ? 
+          !image ?
+          <label className={styles.uploadPhoto}>
+              <input onChange={handleChange} style={{display: "none"}} type="file"/>
+              <i className="fa fa-cloud-upload"></i>
+          </label>
+          :
+          <div className={styles.uploadPhoto}>
+            <i onClick={()=>savePhoto()} className="far fa-save"></i>
+            <i onClick={()=>clearImg()} className="fas fa-times"></i>
+          </div>
+          :
+          null}
+          <button className={styles.title} onClick={() => setShow(true)}>
+            {props.project.title}
+          </button>
         </div>
         <div className={styles.blur}></div>
       </div>
-      <Modal
-        show={show}
-        onHide={() => setShow(false)}
-        centered
-        size="xl"
-      >
-        <Modal.Header style={headerStyles}>
-          <div className={styles.headerContainer}>
-            <i onClick={()=>setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
-            <div className={styles.header}>
-              <div className={styles.modalTitle}>{props.title}</div>
-              <div className={styles.description}>{props.summary}</div>
-              <a href={props.links[0]} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
-                Visit Site
-              </a>
-            </div>
-          </div>
-        </Modal.Header>
-        <Modal.Body style={bodyStyles}>
-          <div className={styles.featuresContainer}>
-            <div className={styles.features}>
-              {
-                props.features.map(item => (
-                  <div className={styles.featureContainer} key={item.icon}> 
-                    <div className={`${styles.feature}`}>
-                      <i className={`${item.icon} ${styles.featureIcon}`}></i> 
-                    </div>
-                    <div className={styles.featureDesc}>{item.feature}</div>
-                  </div>
-                  )
-                )
-              }
-            </div>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <div className={styles.footerContainer}>
-            <div className={styles.tech}>
-              {props.tech.map(item => (
-                <div className={styles.techItem} style={{background: `${getColor()}`}} key={item}>
-                  {item}
-                </div>
-              ))}
-            </div>
-            <div className={styles.gitLinkContainer}>
-              <a href={props.links[1]} target="_blank" rel="noopener noreferrer" className={styles.gitLink}>
-                <i className="fab fa-github"></i>
-                &nbsp; Repo
-              </a>
-            </div>
-          </div>
-        </Modal.Footer>
-      </Modal>
+      <ProjectModal show={show} setShow={setShow} project={props.project} />
     </div>
   )
 }
