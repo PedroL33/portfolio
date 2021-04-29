@@ -5,6 +5,17 @@
   flex-wrap: wrap;
 }
 
+.container {
+  width: 25%;
+  margin: 20px;
+  position: relative; 
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   height: 300px;
   display: flex;

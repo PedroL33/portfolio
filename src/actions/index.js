@@ -69,6 +69,13 @@ export const getProjectError = (errors) => {
   }
 }
 
+export const setCurrentProject = (project) => {
+  return {
+    type: "SET_CURRENT_PROJECT",
+    payload: project
+  }
+}
+
 export const getProjects = () => {
   return async dispatch => {
     dispatch(getProjectStart());

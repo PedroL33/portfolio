@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import checkAuth from '../../actions/checkAuth';
 import { uploadImage, setModalImg, setThumbImg, clearModalImg, clearThumbImg } from '../../actions/admin';
-import { getProjects } from '../../actions';
+import { getProjects, setCurrentProject } from '../../actions';
 import styles from '../../styles/project.module.css';
  
 function UploadImage(props) {
 
   const dispatch = useDispatch();
   const imageUrl = useSelector(state => props.type=="thumbnail" ? state.thumbImg: state.modalImg);
+  const projects = useSelector(state => state.projects);
   const [file, setFile] = useState(null)
+
+  useEffect(() => {
+    if(projects.length) {
+      dispatch(setCurrentProject(projects.find(item => item._id == props.id)))
+    }
+  }, [projects])
 
   const clearImg = () => {
     props.type == "thumbnail" ? dispatch(clearThumbImg()): dispatch(clearModalImg())
@@ -20,7 +27,7 @@ function UploadImage(props) {
     fd.append("image", file)
     await dispatch(uploadImage(props.id, fd, props.type))
     props.type == "thumbnail" ? dispatch(clearThumbImg()): dispatch(clearModalImg())
-    dispatch(getProjects());
+    await dispatch(getProjects());
   }
 
   const handleChange = (e) => {

@@ -1,14 +1,3 @@
-.container {
-  width: 25%;
-  margin: 20px;
-  position: relative; 
-  overflow: hidden;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .siteImg {
   display: block;
   min-width: 100%;
@@ -75,6 +64,10 @@
   z-index: 10;
   font-size: 24px;
   color: rgb(255, 255, 255);
+}
+
+.uploadPhoto {
+  cursor: pointer;
 }
 
 .uploadPhoto i {

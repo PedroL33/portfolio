@@ -6,8 +6,9 @@ import UploadImage from '../admin/uploadImage';
 
 function ProjectModal(props) {
 
-  const modalImg = useSelector(state => state.modalImg)
-  const backgroundImage = modalImg.length ? modalImg: props.project.modalImg ? props.project.modalImg: `${window.location.origin}/images/noImage.jpg`;
+  const modalImg = useSelector(state => state.modalImg);
+  const project = useSelector(state => state.currentProject)
+  const backgroundImage = modalImg.length ? modalImg: project.modalImg ? project.modalImg: `${window.location.origin}/images/noImage.jpg`;
 
   const headerStyles = {
     backgroundImage: `url(${backgroundImage})`,
@@ -35,12 +36,12 @@ function ProjectModal(props) {
       >
         <Modal.Header style={headerStyles}>
           <div className={styles.headerContainer}>
-            <UploadImage type="modal" id={props.project._id} />
+            <UploadImage type="modal" id={project._id} />
             <i onClick={()=>props.setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
             <div className={styles.header}>
-              <div className={styles.modalTitle}>{props.project.title}</div>
-              <div className={styles.description}>{props.project.summary}</div>
-              <a href={props.project.liveLink} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
+              <div className={styles.modalTitle}>{project.title}</div>
+              <div className={styles.description}>{project.summary}</div>
+              <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
                 Visit Site
               </a>
             </div>
@@ -50,7 +51,7 @@ function ProjectModal(props) {
           <div className={styles.featuresContainer}>
             <div className={styles.features}>
               {
-                props.project.features ? props.project.features.map(item => (
+                project.features ? project.features.map(item => (
                   <div className={styles.featureContainer} key={item.icon}> 
                     <div className={`${styles.feature}`}>
                       <i className={`${item.icon} ${styles.featureIcon}`}></i> 
@@ -66,14 +67,14 @@ function ProjectModal(props) {
         <Modal.Footer>
           <div className={styles.footerContainer}>
             <div className={styles.tech}>
-              {props.project.tech.map(item => (
+              {project.tech ? project.tech.map(item => (
                 <div className={styles.techItem} style={{background: `${getColor()}`}} key={item}>
                   {item}
                 </div>
-              ))}
+              )): null}
             </div>
             <div className={styles.gitLinkContainer}>
-              <a href={props.project.gitLink} target="_blank" rel="noopener noreferrer" className={styles.gitLink}>
+              <a href={project.gitLink} target="_blank" rel="noopener noreferrer" className={styles.gitLink}>
                 <i className="fab fa-github"></i>
                 &nbsp; Repo
               </a>
