@@ -56,24 +56,6 @@
   position: relative;
 }
 
-.uploadPhoto {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 10px;
-  z-index: 10;
-  font-size: 24px;
-  color: rgb(255, 255, 255);
-}
-
-.uploadPhoto {
-  cursor: pointer;
-}
-
-.uploadPhoto i {
-  padding: 5px;
-}
-
 /* Modal Styles */
 
 .headerContainer {
@@ -99,6 +81,7 @@
 .modalTitle {
   font-size: 48px;
   font-weight: 800;
+  position: relative;
 }
 
 .description {

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import styles from '../../styles/project.module.css';
 import Modal from 'react-bootstrap/Modal';
 import UploadImage from '../admin/uploadImage';
+import EditProject from '../admin/editProject';
+import checkAuth from '../../actions/checkAuth';
 
 function ProjectModal(props) {
 
@@ -36,10 +38,13 @@ function ProjectModal(props) {
       >
         <Modal.Header style={headerStyles}>
           <div className={styles.headerContainer}>
-            <UploadImage type="modal" id={project._id} />
+            {checkAuth() ? <UploadImage type="modal" id={project._id} />: null}
             <i onClick={()=>props.setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
             <div className={styles.header}>
-              <div className={styles.modalTitle}>{project.title}</div>
+              <div className={styles.modalTitle}>
+                {checkAuth() ? <EditProject id={project._id} />: null}
+                {project.title}
+              </div>
               <div className={styles.description}>{project.summary}</div>
               <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
                 Visit Site

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../../../styles/admin/addModal.module.css';
+import styles from '../../../styles/admin/editProjects.module.css';
 import { addProject, addProjectClear } from '../../../actions/admin';
 import { getProjects } from '../../../actions';
 import Modal from 'react-bootstrap/Modal';
@@ -55,7 +55,7 @@ function AddModal() {
         <Modal.Body>
           <div className={styles.container}>
             <div className={styles.form}>
-              {addStatus.errors ? <div>Could not add project</div>: null}
+              {addStatus.errors ? <div className={styles.errors}>Could not add project</div>: null}
               <input className={styles.formItem} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Project Title"></input>
               <input className={styles.formItem} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Project Description"></input>
               <input className={styles.formItem} onChange={(e) => setGitLink(e.target.value)} type="text" placeholder="Git Link"></input>

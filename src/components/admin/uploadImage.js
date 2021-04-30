@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import checkAuth from '../../actions/checkAuth';
 import { uploadImage, setModalImg, setThumbImg, clearModalImg, clearThumbImg } from '../../actions/admin';
 import { getProjects, setCurrentProject } from '../../actions';
-import styles from '../../styles/project.module.css';
+import styles from '../../styles/admin/editProjects.module.css';
  
 function UploadImage(props) {
 

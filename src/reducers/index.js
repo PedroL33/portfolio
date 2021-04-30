@@ -10,6 +10,7 @@ import deleteProjectReducer from './deleteProject';
 import modalImg from './modalImg';
 import thumbImg from './thumbImg';
 import currentProject from './currentProject';
+import editProject from './editProjectReducer';
 
 const rootReducer = combineReducers({
     currentPage: currentPageReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     deleteProject: deleteProjectReducer,
     thumbImg,
     modalImg,
-    currentProject
+    currentProject,
+    editProject
 })
 
 export default rootReducer;

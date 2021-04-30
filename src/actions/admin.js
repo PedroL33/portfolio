@@ -92,6 +92,26 @@ export const clearModalImg = () => {
   }
 }
 
+export const editProjectStart = () => {
+  return {
+    type: "EDIT_PROJECT_START"
+  }
+}
+
+export const editProjectSuccess = (msg) => {
+  return {
+    type: "EDIT_PROJECT_SUCCESS",
+    payload: msg
+  }
+}
+
+export const editProjectError = (error) => {
+  return {
+    type: "EDIT_PROJECT_ERROR",
+    payload: error
+  }
+}
+
 export const login = (username, password) => {
   return dispatch => {
     console.log(username)
@@ -179,5 +199,25 @@ export const uploadImage = (id, photo, type) => {
       },
       body: photo
     })
+  }
+}
+
+export const editProject = (changes, id) => {
+  return async (dispatch) => {
+    dispatch(editProjectStart());
+    const res = await fetch(`http://localhost:3000/project/edit/${id}`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer: ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(changes)
+    })
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(editProjectError(data))
+    }else {
+      dispatch(editProjectSuccess(data))
+    }
   }
 }

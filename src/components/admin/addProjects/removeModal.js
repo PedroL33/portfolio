@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../../styles/admin/addModal.module.css';
+import styles from '../../../styles/admin/editProjects.module.css';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteProject, clearDeleteProject } from '../../../actions/admin';
