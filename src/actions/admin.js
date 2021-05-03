@@ -112,6 +112,38 @@ export const editProjectError = (error) => {
   }
 }
 
+export const clearEditProject = () => {
+  return {
+    type: "CLEAR_EDIT_PROJECT"
+  }
+}
+
+export const editTechStart = () => {
+  return {
+    type: "EDIT_TECH_START"
+  }
+}
+
+export const editTechSuccess = (msg) => {
+  return {
+    type: "EDIT_TECH_SUCCESS",
+    payload: msg
+  }
+}
+
+export const editTechError = (error) => {
+  return {
+    type: "EDIT_TECH_ERROR",
+    payload: error
+  }
+}
+
+export const clearEditTech = () => {
+  return {
+    type: "CLEAR_EDIT_TECH"
+  }
+}
+
 export const login = (username, password) => {
   return dispatch => {
     console.log(username)
@@ -218,6 +250,26 @@ export const editProject = (changes, id) => {
       dispatch(editProjectError(data))
     }else {
       dispatch(editProjectSuccess(data))
+    }
+  }
+}
+
+export const editTech = (tech, id) => {
+  return async dispatch => {
+    dispatch(editTechStart());
+    const res = await fetch(`http://localhost:3000/project/editTech/${id}`, {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer: ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(tech)
+    })
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(editTechError(data))
+    }else {
+      dispatch(editTechSuccess(data))
     }
   }
 }

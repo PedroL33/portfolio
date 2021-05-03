@@ -57,6 +57,55 @@
   background: red;
 }
 
+.addTechContainer {
+  display: flex;
+  justify-content: center;
+  overflow: none;
+  margin-top: 20px;
+}
+
+.addTechButton {
+  z-index: 2;
+  margin-left: -50px;
+  width: 50px;
+  border: none;
+  background: rgb(0, 163, 0);
+  color: white;
+  font-size: 24px;
+}
+
+.addTechButton:disabled {
+  opacity: 0.3
+}
+
+.addTechInput {
+  padding: 5px 50px 5px 5px;
+  width: 200px;
+}
+
+.techItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid rgb(218, 218, 218);
+  margin: 5px auto;  
+}
+
+.removeTech {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  color: white;
+  margin: 0 10px;
+  border: none;
+  border-radius: 50%; 
+  width: 20px;
+  height: 20px;
+}
+
 /* Edit icons */
 
 .uploadPhoto, .editProjects {
@@ -75,6 +124,17 @@
 .editProjects {
   top:-20px;
   right: -30px;
+  color: grey;
+}
+
+.editTech {
+  color: rgb(0, 163, 0);
+  margin: 10px;
+}
+
+.editTech:hover {
+  cursor:pointer;
+  opacity: 0.8;
 }
 
 .uploadPhoto, .editProjects {

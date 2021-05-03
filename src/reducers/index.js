@@ -11,6 +11,7 @@ import modalImg from './modalImg';
 import thumbImg from './thumbImg';
 import currentProject from './currentProject';
 import editProject from './editProjectReducer';
+import editTech from './editTech';
 
 const rootReducer = combineReducers({
     currentPage: currentPageReducer,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     thumbImg,
     modalImg,
     currentProject,
-    editProject
+    editProject,
+    editTech
 })
 
 export default rootReducer;

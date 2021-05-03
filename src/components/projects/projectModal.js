@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import UploadImage from '../admin/uploadImage';
 import EditProject from '../admin/editProject';
 import checkAuth from '../../actions/checkAuth';
+import EditTech from '../admin/editTech';
 
 function ProjectModal(props) {
 
@@ -16,7 +17,7 @@ function ProjectModal(props) {
     backgroundImage: `url(${backgroundImage})`,
     padding: "0",
     backgroundPosition: "center",
-    backgroundSize: "100% auto"
+    backgroundSize: "auto 100%"
   }
 
   const bodyStyles = {
@@ -77,6 +78,7 @@ function ProjectModal(props) {
                   {item}
                 </div>
               )): null}
+              <EditTech id={project._id}/>
             </div>
             <div className={styles.gitLinkContainer}>
               <a href={project.gitLink} target="_blank" rel="noopener noreferrer" className={styles.gitLink}>

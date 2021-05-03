@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import styles from '../../styles/admin/editProjects.module.css';
-import { editProject } from '../../actions/admin';
+import { editProject, clearEditProject } from '../../actions/admin';
 import { getProjects, setCurrentProject } from '../../actions';
 
 function EditProject(props) {
@@ -25,6 +25,7 @@ function EditProject(props) {
       setError("Could not save changes.")
     }else if(editResponse.success) {
       handleHide();
+      dispatch(clearEditProject());
       dispatch(getProjects())
     }
   }, [editResponse])
