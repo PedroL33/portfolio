@@ -144,6 +144,32 @@ export const clearEditTech = () => {
   }
 }
 
+export const editFeaturesStart = () => {
+  return {
+    type: "EDIT_FEATURES_START"
+  }
+}
+
+export const editFeaturesSuccess = (data) => {
+  return {
+    type: "EDIT_FEATURES_SUCCESS",
+    payload: data
+  }
+}
+
+export const editFeaturesError = (error) => {
+  return {
+    type: "EDIT_FEATURES_ERROR",
+    payload: error
+  }
+}
+
+export const editFeaturesClear = () => {
+  return {
+    type: "EDIT_FEATURES_CLEAR"
+  }
+}
+
 export const login = (username, password) => {
   return dispatch => {
     console.log(username)
@@ -257,7 +283,7 @@ export const editProject = (changes, id) => {
 export const editTech = (tech, id) => {
   return async dispatch => {
     dispatch(editTechStart());
-    const res = await fetch(`http://localhost:3000/project/editTech/${id}`, {
+    const res = await fetch(`http://localhost:3000/project/tech/${id}`, {
       method: "POST",
       headers: {
         'Content-type': 'application/json',
@@ -270,6 +296,26 @@ export const editTech = (tech, id) => {
       dispatch(editTechError(data))
     }else {
       dispatch(editTechSuccess(data))
+    }
+  }
+}
+
+export const editFeatures = (features, id) => {
+  return async dispatch => {
+    dispatch(editFeaturesStart());
+    const res = await fetch(`http://localhost:3000/project/features/${id}`, {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer: ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(features)
+    })
+    const data = await res.json();
+    if(data.errors) {
+      dispatch(editFeaturesError(data))
+    }else {
+      dispatch(editFeaturesSuccess(data))
     }
   }
 }

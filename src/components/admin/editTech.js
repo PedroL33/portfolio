@@ -36,6 +36,7 @@ const EditTech = (props) => {
   const handleOpen = () => {
     setShow(true);
     setTech([...project.tech]);
+    setErrors("");
   }
 
   const addTech = () => {
@@ -54,13 +55,12 @@ const EditTech = (props) => {
 
   const handleSubmit = () => {
     dispatch(editTech(tech, props.id))
-
   }
 
   return (
     <>
       <div className={styles.editTech} onClick={()=>handleOpen()}>
-        <i className="fas fa-plus"></i>
+        <i className="fas fa-pen"></i>
       </div>
       <Modal
       show={show}
@@ -74,6 +74,7 @@ const EditTech = (props) => {
         </Modal.Header>
         <Modal.Body>
           <div className={styles.form}>
+            {errors.length ? <div className={styles.errors}>{errors}</div>: null}
             {
               tech.length ? tech.map((item, i) => 
                 <div className={styles.techItem} key={i}>

@@ -22,7 +22,8 @@ function UploadImage(props) {
     props.type == "thumbnail" ? dispatch(clearThumbImg()): dispatch(clearModalImg())
   }
 
-  const savePhoto = async () => {
+  const savePhoto = async (e) => {
+    e.stopPropagation();
     let fd = new FormData();
     fd.append("image", file)
     await dispatch(uploadImage(props.id, fd, props.type))
@@ -42,14 +43,17 @@ function UploadImage(props) {
     <div>
       {checkAuth() ? 
         !imageUrl.length ?
-        <label className={styles.uploadPhoto}>
+        <label className={styles.uploadPhoto} onClick={(e) => e.stopPropagation()}>
             <input onChange={handleChange} style={{display: "none"}} type="file"/>
             <i className="fa fa-cloud-upload"></i>
         </label>
         :
         <div className={styles.uploadPhoto}>
-          <i onClick={()=>savePhoto()} className="far fa-save"></i>
-          <i onClick={()=>clearImg()} className="fas fa-times"></i>
+          <i onClick={(e)=>savePhoto(e)} className="far fa-save"></i>
+          <i onClick={(e)=>{
+            clearImg(e);
+            e.stopPropagation();
+          }} className="fas fa-times"></i>
         </div>
         :
         null}

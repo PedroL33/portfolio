@@ -4,6 +4,7 @@ import styles from '../../styles/project.module.css';
 import Modal from 'react-bootstrap/Modal';
 import UploadImage from '../admin/uploadImage';
 import EditProject from '../admin/editProject';
+import EditFeatures from '../admin/editFeatures/editFeatures';
 import checkAuth from '../../actions/checkAuth';
 import EditTech from '../admin/editTech';
 
@@ -57,16 +58,22 @@ function ProjectModal(props) {
           <div className={styles.featuresContainer}>
             <div className={styles.features}>
               {
-                project.features ? project.features.map(item => (
+                project.features && project.features.length ? project.features.map(item => (
                   <div className={styles.featureContainer} key={item.icon}> 
                     <div className={`${styles.feature}`}>
                       <i className={`${item.icon} ${styles.featureIcon}`}></i> 
                     </div>
-                    <div className={styles.featureDesc}>{item.feature}</div>
+                    <div className={styles.featureDesc}>{item.description}</div>
                   </div>
                   )
-                ): null
+                ): <div className={styles.featureContainer}> 
+                    <div className={`${styles.feature}`}>
+                      <i className={`fas fa-pen ${styles.featureIcon}`}></i> 
+                    </div>
+                    <div className={styles.featureDesc}>No features yet.</div>
+                  </div>
               }
+              {checkAuth() ? <EditFeatures id={project._id}/>: null}
             </div>
           </div>
         </Modal.Body>
