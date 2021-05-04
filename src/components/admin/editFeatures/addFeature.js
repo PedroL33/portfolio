@@ -21,9 +21,9 @@ const AddFeature = (props) => {
 
   return (
     <> 
-      <div onClick={()=>setShow(true)}>
+      <button className={styles.submit} onClick={()=>setShow(true)}>
         <i className="fas fa-plus"></i>
-      </div>
+      </button>
       <Modal
         show={show}
         onHide={() => setShow(false)}

@@ -77,15 +77,17 @@ const EditFeatures = (props) => {
               <div className={styles.feature}>
                 <div className={styles.featureIcon}><i className={item.icon}></i></div>
                 <div className={styles.featureDesc}>{item.description}</div>
-                <div>
+                <div className={styles.editButtons}>
                   <i className="fas fa-times" onClick={()=>removeFeature(item)}></i>
                   <ChangeFeature idx={idx} features={features} setFeatures={setFeatures} />
                 </div>
               </div>): 
-            <div>No Features Yet</div>
+              <div>No Features Yet</div>
             }
           </div>
-          <AddFeature features={features} setFeatures={setFeatures} />
+          <div className={styles.submitContainer}>
+            <AddFeature features={features} setFeatures={setFeatures} />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <button onClick={handleSubmit} disabled={disabled()} className={styles.submit}>Save Changes</button>
