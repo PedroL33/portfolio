@@ -3,8 +3,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90vh;
+  height: calc(100vh - 100px);
   color: white;
+  background-image: linear-gradient(#457fca, #5691c8); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12,40 +13,29 @@
 }
 
 .container.sticky {
-  margin-bottom: 10vh;
+  margin-bottom: 100px;
 }
 
 .name {
   font-size: 56px;
   font-weight: 800;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .desc {
-  width: 90%;
+  width: 100%;
   margin: auto;
   font-size: 24px;
   text-align: center;
   font-weight: 800;
-}
-
-.fixedLinks {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  z-index: 3;
-  position: fixed;
-  top: 50%; 
-  left: 0;
-  align-items: flex-start;
+  padding: 10px;
 }
 
 .fixedLink {
-  transition: border-radius 1s;
   border: none;
-  margin: 1px 0;
+  border-radius: 50%;
+  margin: 5px;
   border-right: none;
   display:flex;
   align-items: center;
@@ -53,6 +43,7 @@
   padding: 10px !important;
   color: white;
   opacity: 0.8;
+  background-image: linear-gradient(#457fca, #5691c8); 
 }
 
 .fixedLink i {
@@ -61,35 +52,33 @@
   padding: 10px;
 }
 
-.fixedLink span {
-  max-width: 0;
-  -webkit-transition: max-width 1s;
-  transition: max-width 1s;
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
-  font-size: 20px;
-  font-weight: 800;
-}
-
 .fixedLink:hover {
   text-decoration: none;
   color: white; 
   opacity: 1;
-  border-radius: 0 15px 15px 0;
-}
-
-
-.fixedLink:hover span {
-  max-width: 150px;
-  color: white;
-  padding: 5px 0 0 0;
 }
 
 .fixedLink a {
   padding: 0 24px;
+}
+
+.headerLinks {
+  padding: 10px;
+}
+
+.headerLink {
+  font-size: 24px;
+  display: inline-block;
+  color: white;
+  margin: 0 20px; 
+  transform: scale(1);
+  transition: transform 200ms ease;
+}
+
+.headerLink:hover {
+  transform: scale(1.2);
+  text-decoration: none;
+  color: white;
 }
 
 @media screen and (max-width: 1200px) { 

@@ -7,7 +7,7 @@ import {
 import Login from './components/admin/login';
 import './App.css';
 import Nav from './components/nav';
-import Header from './components/header';
+import Header from './components/header/header';
 import Projects from './components/projects/index';
 import About from './components/about/about';
 import Contact from './components/contact';
@@ -31,7 +31,7 @@ function App() {
   })
 
   const handleScroll = () => {
-    dispatch(setSticky(window.pageYOffset > window.innerHeight * 0.9));
+    dispatch(setSticky(window.pageYOffset > window.innerHeight - 100));
     const project = projectRef.current.getBoundingClientRect().bottom
     const about = aboutRef.current.getBoundingClientRect().bottom 
     if(!sticky) {
