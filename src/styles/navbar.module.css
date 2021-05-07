@@ -40,7 +40,7 @@
 }
 
 .link.active {
-  color: #457fca;
+  color: #292e49;
   transform: scale(1.2);
 }
 
@@ -49,7 +49,7 @@
   width: 0px;
   height: 1px;
   display: block;
-  background: #457fca;
+  background: #292e49;
   transition: all 200ms;
 }
 

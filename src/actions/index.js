@@ -93,3 +93,21 @@ export const getProjects = () => {
     }
   }
 }
+
+export const sendMessage = (message, email, name) => {
+  return async dispatch => {
+    const res = await fetch('http://localhost:3000/newMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message,
+        email,
+        name
+      })
+    })
+    const data = await res.json();
+    dispatch(setMessageResponse(data))
+  }
+}

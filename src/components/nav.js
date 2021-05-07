@@ -27,7 +27,7 @@ const Logo = styled.div`
   transition: opacity 500ms ease-in-out;
   font-size: 24px;
   cursor: pointer;
-  color: #457fca;
+  color: #292e49;
 
   @media screen and (max-width: 1200px) { 
     display: none;
