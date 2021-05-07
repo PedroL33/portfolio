@@ -69,7 +69,6 @@ function App() {
               <div ref={contactRef}>
                 <Contact />
               </div>
-              <div className="section-spacer"></div>
               <Footer />
             </div>
           </div>

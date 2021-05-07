@@ -43,21 +43,32 @@
   width: 100%;
 }
 
-.error, .success {
-  font-size: 16px;
+.success {
+  font-size: 24px;
+  text-align: center;
   display: flex; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100px;
+  width: 300px;
+  margin: auto;
   border-radius: 15px;
+  color: white;
+  position: relative;
 }
 
-.success {
-  background-color: rgb(0, 128, 0, 0.4);
+.accept {
+  background: #536976;
+  border: none;
+  color: white;
+  position: absolute;
+  top: -30px;
+  right: 0;
 }
 
-.error {
-  background-color: rgb(255, 0, 0, 0.4);
+.invalid {
+  background-color: rgb(255, 192, 192);
 }
 
 .form {
@@ -72,7 +83,6 @@
 .form input, .form textarea {
   border: none;
   margin: 10px 0;
-  background: white;
   font-size: 18px;
   font-weight: 800;
   width: 75%;
