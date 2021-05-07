@@ -4,15 +4,23 @@ import styles from '../styles/footer.module.css';
 function Footer() {
   return (
     <div className={styles.container}>
-      <div>© 2020 Peter Lee</div> 
-      <div>Software Developer</div>
-      <div>
-        <a href="mailto: leepeter019@gmail.com">leepeter019@gmail.com</a> 
+      <div className={styles.item}>
+        <a className={styles.icon} href={window.location.origin + "/Resume.pdf"} target="_blank" rel="noopener noreferrer" >
+          <i class="far fa-file"></i>
+        </a> 
+        <div className={styles.words}>RESUME</div>
       </div>
-      <div>
-        Icons made by&nbsp;<a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a> 
-        &nbsp;and&nbsp;<a href="https://www.flaticon.com/authors/catkuro" title="catkuro">catkuro</a>
-        &nbsp;from&nbsp; <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <div className={styles.item}>
+        <a className={styles.icon} href="mailto: leepeter019@gmail.com">
+          <i class="far fa-envelope"></i>
+        </a> 
+        <div className={styles.words}>E-MAIL</div>
+      </div>
+      <div className={styles.item}>
+        <a className={styles.icon} href="https://github.com/PedroL33" target="_blank" rel="noopener noreferrer" >
+          <i class="fab fa-github"></i>
+        </a> 
+        <div className={styles.words}>GITHUB</div>
       </div>
     </div>
   )
