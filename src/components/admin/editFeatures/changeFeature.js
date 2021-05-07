@@ -16,6 +16,7 @@ const ChangeFeatures = (props) => {
 
   const handleSubmit = () => {
     const newFeature = {
+      _id: props.features[props.idx]._id,
       description: desc,
       icon: icon
     }

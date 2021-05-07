@@ -5,12 +5,11 @@ import styles from '../../styles/admin/editProjects.module.css';
 import { editProject, clearEditProject } from '../../actions/admin';
 import { getProjects, setCurrentProject } from '../../actions';
 
-function EditProject(props) {
+function EditProject() {
 
   const dispatch = useDispatch();
 
   const project = useSelector(state => state.currentProject);
-  const projects = useSelector(state => state.projects);
   const editResponse = useSelector(state => state.editProject);
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState(project.title);
@@ -24,17 +23,14 @@ function EditProject(props) {
       reset();
       setError("Could not save changes.")
     }else if(editResponse.success) {
+      dispatch(setCurrentProject(editResponse.success));
       handleHide();
-      dispatch(clearEditProject());
-      dispatch(getProjects())
+      return ( () => {
+        dispatch(clearEditProject());
+        dispatch(getProjects())
+      })
     }
   }, [editResponse])
-
-  useEffect(() => {
-    if(projects.length && project) {
-      dispatch(setCurrentProject(projects.find(item => item._id == props.id)))
-    }
-  }, [projects])
 
   useEffect(() => {
     if(project) {

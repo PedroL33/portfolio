@@ -10,7 +10,6 @@ import { getProjects, setCurrentProject } from '../../../actions';
 const EditFeatures = (props) => {
 
   const [show, setShow] = useState(false);
-  const projects = useSelector(state => state.projects);
   const project = useSelector(state => state.currentProject);
   const editFeaturesRes = useSelector(state => state.editFeatures);
   const [features, setFeatures] = useState([]);
@@ -21,22 +20,19 @@ const EditFeatures = (props) => {
     if(editFeaturesRes.errors) {
       setErrors(editFeatures.errors);
     }else if(editFeaturesRes.success) {
-      dispatch(editFeaturesClear());
-      dispatch(getProjects());
+      dispatch(setCurrentProject(editFeaturesRes.success));
       setShow(false);
       setErrors("");
+      return ( () => {
+        dispatch(editFeaturesClear());
+        dispatch(getProjects());
+      })
     }
   }, [editFeaturesRes])
 
-  useEffect(() => {
-    if(projects.length && project) {
-      dispatch(setCurrentProject(projects.find(item => item._id == props.id)))
-    }
-  }, [projects])
-
   const handleOpen = () => {
     setShow(true);
-    setFeatures(project.features);
+    setFeatures([...project.features]);
     setErrors("");
   }
 
@@ -46,7 +42,7 @@ const EditFeatures = (props) => {
   }
 
   const disabled = () => {
-    return JSON.stringify(project.features) == JSON.stringify(features)
+    return JSON.stringify(project.features) === JSON.stringify(features)
   }
 
   const handleSubmit = () => {
@@ -90,7 +86,7 @@ const EditFeatures = (props) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={handleSubmit} disabled={disabled()} className={styles.submit}>Save Changes</button>
+          <button onClick={()=>handleSubmit()} disabled={disabled()} className={styles.submit}>Save Changes</button>
         </Modal.Footer>
       </Modal>
     </> 

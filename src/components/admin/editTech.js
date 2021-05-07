@@ -9,7 +9,6 @@ const EditTech = (props) => {
 
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
-  const projects = useSelector(state => state.projects);
   const project = useSelector(state => state.currentProject);
   const editTechRes = useSelector(state => state.editTech);
   const [tech, setTech] = useState([]);
@@ -17,21 +16,24 @@ const EditTech = (props) => {
   const [errors, setErrors] = useState("")
 
   useEffect(() => {
-    if(editTech.errors) {
-      setErrors(editTech.errors)
+    if(editTechRes.errors) {
+      setErrors(editTechRes.errors)
     }else if(editTechRes.success) {
-      dispatch(clearEditTech());
-      dispatch(getProjects());
+      dispatch(setCurrentProject(editTechRes.success));
       setShow(false);
       setErrors("");
+      return( () => {
+        dispatch(clearEditTech());
+        dispatch(getProjects());
+      })
     }
   }, [editTechRes])
 
-  useEffect(() => {
-    if(projects.length && project) {
-      dispatch(setCurrentProject(projects.find(item => item._id == props.id)))
-    }
-  }, [projects])
+  const handleClose = () => {
+    setShow(false);
+    setNewTech("");
+    setErrors("");
+  }
 
   const handleOpen = () => {
     setShow(true);
@@ -64,7 +66,7 @@ const EditTech = (props) => {
       </div>
       <Modal
       show={show}
-      onHide={() => setShow(false)}
+      onHide={() => handleClose()}
       centered
       size="m">
         <Modal.Header closeButton>

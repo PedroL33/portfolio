@@ -44,7 +44,7 @@ function ProjectModal(props) {
             <i onClick={()=>props.setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
             <div className={styles.header}>
               <div className={styles.modalTitle}>
-                {checkAuth() ? <EditProject id={project._id} />: null}
+                {checkAuth() ? <EditProject />: null}
                 {project.title}
               </div>
               <div className={styles.description}>{project.summary}</div>
