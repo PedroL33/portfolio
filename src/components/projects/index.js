@@ -6,6 +6,7 @@ import checkAuth from '../../actions/checkAuth';
 import AddProject from '../admin/addProjects/addProject';
 import { getProjects, setCurrentProject } from '../../actions';
 import ProjectModal from './projectModal';
+import Loading from '../loading';
 
 function Projects() {
 
@@ -30,7 +31,7 @@ function Projects() {
         <div className={styles.section}> 
           {
             projects.length && !projects.error ? projects.map((item) => 
-            <div className={styles.container} onClick={()=>handleClick(item)}>
+            <div key={item._id} className={styles.container} onClick={()=>handleClick(item)}>
               <Project
                 thumbImg={item.thumbImg}
                 title={item.title}
@@ -41,6 +42,7 @@ function Projects() {
           <ProjectModal show={show} setShow={setShow}/>
           {checkAuth() ? <AddProject /> :null}
         </div>
+        <Loading size={100} numCircles={10} />
       </div>
   )
 }
