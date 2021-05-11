@@ -85,7 +85,7 @@ function ProjectModal(props) {
                   {item}
                 </div>
               )): null}
-              <EditTech id={project._id}/>
+              {checkAuth() ? <EditTech id={project._id}/>: null}
             </div>
             <div className={styles.gitLinkContainer}>
               <a href={project.gitLink} target="_blank" rel="noopener noreferrer" className={styles.gitLink}>
