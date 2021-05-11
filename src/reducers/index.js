@@ -5,7 +5,7 @@ import messageResponseReducer from './messageResponse';
 import aboutHeaderReducer from "./aboutHeader";
 import loginReducer from './login';
 import addProjectReducer from './addProject';
-import getProjectReducer from './getProject';
+import getProjectsRes from './getProject';
 import deleteProjectReducer from './deleteProject';
 import modalImg from './modalImg';
 import thumbImg from './thumbImg';
@@ -13,6 +13,7 @@ import currentProject from './currentProject';
 import editProject from './editProjectReducer';
 import editTech from './editTech';
 import editFeatures from './editFeatures';
+import projects from './Projects';
 
 const rootReducer = combineReducers({
     currentPage: currentPageReducer,
@@ -21,14 +22,15 @@ const rootReducer = combineReducers({
     aboutHeader: aboutHeaderReducer,
     loginStatus: loginReducer,
     addProject: addProjectReducer,
-    projects: getProjectReducer,
+    getProjectsRes,
     deleteProject: deleteProjectReducer,
     thumbImg,
     modalImg,
     currentProject,
     editProject,
     editTech,
-    editFeatures
+    editFeatures,
+    projects
 })
 
 export default rootReducer;

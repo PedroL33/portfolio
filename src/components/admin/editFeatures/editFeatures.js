@@ -23,9 +23,9 @@ const EditFeatures = (props) => {
       dispatch(setCurrentProject(editFeaturesRes.success));
       setShow(false);
       setErrors("");
+      dispatch(getProjects());
       return ( () => {
         dispatch(editFeaturesClear());
-        dispatch(getProjects());
       })
     }
   }, [editFeaturesRes])

@@ -21,18 +21,6 @@
   background-color: white;
 }
 
-.page-content {
-  width: 2000px;
-  margin: auto;
-  background: rgb(254, 254, 254);
-}
-
-@media screen and (max-width: 2000px) {
-  .page-content {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .modal-dialog {
     width: 90%;

@@ -29,11 +29,25 @@ export const setSticky = (isSticky) => {
     }
 }
 
-export const setMessageResponse = (response) => {
-    return {
-        type: "SET_MESSAGE_RESPONSE",
-        payload: response
-    }
+export const sendMessageStart = (response) => {
+  return {
+    type: "SEND_MESSAGE_START",
+    payload: response
+  }
+}
+
+export const sendMessageSuccess = (message) => {
+  return {
+    type: "SEND_MESSAGE_SUCCESS",
+    payload: message
+  }
+}
+
+export const sendMessageError = (error) => {
+  return {
+    type: "SEND_MESSAGE_ERROR",
+    payload: error
+  }
 }
 
 export const clearMessageResponse = () => {
@@ -49,23 +63,42 @@ export const setAboutHeader = (section) => {
   }
 }
 
-export const getProjectStart = () => {
+export const getProjectsStart = () => {
   return {
-    type: "GET_PROJECT_START"
+    type: "GET_PROJECTS_START"
   }
 }
 
-export const getProjectSuccess = (projects) => {
+export const getProjectsSuccess = (projects) => {
   return {
-    type: "GET_PROJECT_SUCCESS", 
+    type: "GET_PROJECTS_SUCCESS",
     payload: projects
   }
 }
 
-export const getProjectError = (errors) => {
+export const getProjectsError = (errors) => {
   return {
-    type: "GET_PROJECT_ERROR",
+    type: "GET_PROJECTS_ERROR",
     payload: errors
+  }
+}
+
+export const clearGetProjects = () => {
+  return {
+    type: "CLEAR_GET_PROJECTS"
+  }
+}
+
+export const setProjects = (projects) => {
+  return {
+    type: "SET_PROJECTS",
+    payload: projects
+  }
+}
+
+export const clearProjects = () => {
+  return {
+    type: "CLEAR_PROJECTS"
   }
 }
 
@@ -78,36 +111,50 @@ export const setCurrentProject = (project) => {
 
 export const getProjects = () => {
   return async dispatch => {
-    dispatch(getProjectStart());
-    const res = await fetch('http://localhost:3000/project/all', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    const data = await res.json();
-    if(data.errors) {
-      dispatch(getProjectError(data))
-    }else {
-      dispatch(getProjectSuccess(data))
+    dispatch(getProjectsStart());
+    try {
+      const res = await fetch('http://localhost:3000/project/all', {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      })
+      const data = await res.json();
+      if(data.errors) {
+        setTimeout(()=> dispatch(getProjectsError(data)), 1500);
+      }else {
+        setTimeout(() => dispatch(getProjectsSuccess(data)), 1500);
+        dispatch(setProjects(data))
+      }
+    }catch(err) {
+      setTimeout(() => dispatch(getProjectsError({errors: "Server error."})), 1500);
     }
   }
 }
 
 export const sendMessage = (message, email, name) => {
   return async dispatch => {
-    const res = await fetch('http://localhost:3000/newMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message,
-        email,
-        name
+    dispatch(sendMessageStart());
+    try {
+      const res = await fetch('http://localhost:3000/newMessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message,
+          email,
+          name
+        })
       })
-    })
-    const data = await res.json();
-    dispatch(setMessageResponse(data))
+      const data = await res.json();
+      if(data.errors) {
+        setTimeout(() => dispatch(sendMessageError(data)), 1500);
+      }else {
+        setTimeout(() => dispatch(sendMessageSuccess(data)), 1500);
+      }
+    }catch(err) {
+      setTimeout(() => dispatch(sendMessageError({errors: [{param: "server", msg: "Server error."}]})), 1500);
+    }
   }
 }

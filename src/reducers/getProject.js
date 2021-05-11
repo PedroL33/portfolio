@@ -1,14 +1,16 @@
-const getProjectReducer = (state=[], action) => {
+const getProjectsRes = (state={}, action) => {
   switch(action.type) {
-    case "GET_PROJECT_START":
-      return { msg: "pending" }
-    case "GET_PROJECT_SUCCESS":
-      return action.payload
-    case "GET_PROJECT_ERROR":
-      return action.payload
+    case "GET_PROJECTS_START":
+      return { msg: "pending" };
+    case "GET_PROJECTS_SUCCESS":
+      return { success: action.payload };
+    case "GET_PROJECTS_ERROR":
+      return action.payload;
+    case "CLEAR_GET_PROJECTS":
+      return {};
     default:
       return state
   }
 }
 
-export default getProjectReducer;
+export default getProjectsRes;

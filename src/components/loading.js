@@ -21,21 +21,30 @@ const Pulse = keyframes`
 
 const Dot = styled.div`
   position: absolute;
-  top: ${props => Math.sin((props.number/props.numCircles)*2*3.14) * 50 + 50}px;
-  right: ${props => Math.cos((props.number/props.numCircles)*2*3.14) * 50 + 50}px;
+  top: ${props => (Math.sin((props.number/props.numCircles)*2*3.14) + 1) * (props.size/2)}px;
+  right: ${props => (Math.cos((props.number/props.numCircles)*2*3.14) + 1) * (props.size/2)}px;
   margin: -5px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: black;
+  background-color: ${props => props.color};
   animation: ${Spin} 1.5s linear ${props => (props.number/props.numCircles)*1.5}s infinite backwards, ${Pulse} 1.5s linear ${props => (props.number/props.numCircles)*1.5}s infinite backwards;
 `
 
 const Loading = (props) => {
+
+  const getColor = () => {
+    return "rgb(" + (256/2) * (1+Math.random()) + ',' +
+    (256) *(Math.random()) + ',' + 
+    (256) * (Math.random()) + ')';
+  } 
+
   return (
-    <div>
+    <div style={{height: "100%"}}>
       <Loader size={props.size}>
-        {[...Array(props.numCircles).keys()].map(item => <Dot size={props.size} numCircles={props.numCircles} number={item}></Dot>)}
+        {[...Array(props.numCircles).keys()].map(item => 
+          <Dot size={props.size} numCircles={props.numCircles} number={item} color={getColor()}></Dot>
+        )}
       </Loader>
     </div>
   )

@@ -25,9 +25,9 @@ function EditProject() {
     }else if(editResponse.success) {
       dispatch(setCurrentProject(editResponse.success));
       handleHide();
+      dispatch(getProjects())
       return ( () => {
         dispatch(clearEditProject());
-        dispatch(getProjects())
       })
     }
   }, [editResponse])

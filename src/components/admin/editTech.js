@@ -22,9 +22,9 @@ const EditTech = (props) => {
       dispatch(setCurrentProject(editTechRes.success));
       setShow(false);
       setErrors("");
+      dispatch(getProjects());
       return( () => {
         dispatch(clearEditTech());
-        dispatch(getProjects());
       })
     }
   }, [editTechRes])

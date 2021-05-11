@@ -4,19 +4,26 @@ import Project from './project';
 import styles from '../../styles/projectIndex.module.css';
 import checkAuth from '../../actions/checkAuth';
 import AddProject from '../admin/addProjects/addProject';
-import { getProjects, setCurrentProject } from '../../actions';
+import { getProjects, setCurrentProject, setProjects, clearGetProjects } from '../../actions';
 import ProjectModal from './projectModal';
 import Loading from '../loading';
 
 function Projects() {
 
     const dispatch = useDispatch();
-    const projects = useSelector(state => state.projects)
+    const projects = useSelector(state => state.projects);
+    const getProjectsRes = useSelector(state => state.getProjectsRes);
     const [show, setShow] = useState(false)
 
   useEffect(() => {
     dispatch(getProjects());
   }, [])
+
+  useEffect(() => {
+    if(getProjectsRes.success) {
+      dispatch(clearGetProjects());
+    }
+  }, [getProjectsRes])
 
   const handleClick = (project) => {
     setShow(true)
@@ -30,19 +37,23 @@ function Projects() {
         </div>
         <div className={styles.section}> 
           {
-            projects.length && !projects.error ? projects.map((item) => 
-            <div key={item._id} className={styles.container} onClick={()=>handleClick(item)}>
-              <Project
-                thumbImg={item.thumbImg}
-                title={item.title}
-                id={item._id}
-              />
-            </div>): null
+            getProjectsRes.errors ? <div className={styles.errors}>
+              <div className={styles.errors__msg}>{getProjectsRes.errors}</div>
+              <button className={`${styles.errors__btn} fa fa-refresh`} onClick={() => dispatch(getProjects())}></button>
+            </div>:
+            getProjectsRes.msg ? <Loading size={100} numCircles={20} />:
+            projects.length ? projects.map((item) => 
+              <div key={item._id} className={styles.container} onClick={()=>handleClick(item)}>
+                <Project
+                  thumbImg={item.thumbImg}
+                  title={item.title}
+                  id={item._id}
+                />
+              </div>): <div className={styles.notAvailable}>No Projects Yet...</div>
           }
           <ProjectModal show={show} setShow={setShow}/>
           {checkAuth() ? <AddProject /> :null}
         </div>
-        <Loading size={100} numCircles={10} />
       </div>
   )
 }
