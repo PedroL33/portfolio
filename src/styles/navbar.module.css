@@ -46,8 +46,8 @@
 
 .link::after {
   content: '';
-  width: 0px;
-  height: 1px;
+  width: 0;
+  height: 1.5px;
   display: block;
   background: #292e49;
   transition: all 200ms;

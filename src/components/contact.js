@@ -39,7 +39,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="stickyItem contact-section">
+    <div className={styles.section}>
       <div className={styles.header}>Get in touch.</div>
       {formErrors.server ? <div className={styles.serverError}>{formErrors.server}</div>:null}
       <div className={styles.container}>

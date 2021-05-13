@@ -1,8 +1,6 @@
 import { combineReducers } from "redux"
 import currentPageReducer from './currentPageReducer';
-import stickyReducer from './stickyReducer';
 import messageResponseReducer from './messageResponse';
-import aboutHeaderReducer from "./aboutHeader";
 import loginReducer from './login';
 import addProjectReducer from './addProject';
 import getProjectsRes from './getProject';
@@ -14,23 +12,23 @@ import editProject from './editProjectReducer';
 import editTech from './editTech';
 import editFeatures from './editFeatures';
 import projects from './Projects';
+import sticky from './sticky';
 
 const rootReducer = combineReducers({
-    currentPage: currentPageReducer,
-    sticky: stickyReducer,
-    messageResponse: messageResponseReducer,
-    aboutHeader: aboutHeaderReducer,
-    loginStatus: loginReducer,
-    addProject: addProjectReducer,
-    getProjectsRes,
-    deleteProject: deleteProjectReducer,
-    thumbImg,
-    modalImg,
-    currentProject,
-    editProject,
-    editTech,
-    editFeatures,
-    projects
+  sticky,
+  currentPage: currentPageReducer,
+  messageResponse: messageResponseReducer,
+  loginStatus: loginReducer,
+  addProject: addProjectReducer,
+  getProjectsRes,
+  deleteProject: deleteProjectReducer,
+  thumbImg,
+  modalImg,
+  currentProject,
+  editProject,
+  editTech,
+  editFeatures,
+  projects
 })
 
 export default rootReducer;

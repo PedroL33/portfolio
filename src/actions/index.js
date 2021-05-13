@@ -22,11 +22,16 @@ export const currentReset= () => {
     }
 }
 
-export const setSticky = (isSticky) => {
-    return {
-        type: "SET_STICKY",
-        payload: isSticky
-    }
+export const setSticky = () => {
+  return {
+    type: "SET_STICKY"
+  }
+}
+
+export const notSticky = () => {
+  return {
+    type: "NOT_STICKY"
+  }
 }
 
 export const sendMessageStart = (response) => {
