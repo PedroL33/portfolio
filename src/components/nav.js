@@ -42,7 +42,7 @@ export default function Nav(props) {
 
   function handleClick(item) {
     const itemTop = item.current.getBoundingClientRect().top;
-    const top = item!==props.aboutRef ? itemTop - 99: itemTop;
+    const top = item!==props.aboutRef ? itemTop - 99: itemTop-1;
     window.scrollTo({
       top: top + window.pageYOffset,
       behavior: "smooth"
