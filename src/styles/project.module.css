@@ -1,25 +1,74 @@
-.siteImg {
-  display: block;
-  min-width: 100%;
-  min-height: 100%;
+.section {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.blur {
-  position: absolute;
-  top:0;
-  left:0;
-  right: 0;
-  bottom: 0;
-  filter: none;
-  background-position: top;
-  background-size: 100% auto;
-  transition: all 300ms ease;
+.container {
+  position: relative; 
+  flex: 1 0 auto;
+  border-radius: 10px;
+  height: 200px;
+  width: auto;
+}
+
+.header {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.sectionDescription {
+  font-size: 24px;
+  text-align: center;
+}
+
+.errors {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.errors__msg, .notAvailable {
+  font-size: 24px;
+}
+
+.errors__btn {
+  padding: 5px 15px;
+  border: none;
+  background: none;
+  font-size: 48px;
+  color: green;
+  margin: 10px;
+}
+
+.body {
+  position: relative; 
+  flex: 1 0 auto;
+  border-radius: 10px;
+  height: 200px;
+  width: auto;
+}
+
+.siteImg {
+  display: block;
+  border: 0;
+  width: auto;
+  height: 100%;
 }
 
 .overlay {
   border: none;
-  background: rgba(39, 39, 39, 0.0);
-  color: white;
   position: absolute;
   width: 100%;
   top: 0;
@@ -27,297 +76,53 @@
   left: 0;
   bottom: 0;
   font-size: 36px;
-  transition: background 300ms ease;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 3;
+  padding: 20px;
+  text-align: center;
+  transform: scale(.95);
+  transition: all 300ms ease;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.overlay:hover {
-  background: rgb(39, 39, 39, 0.5);
+.section:hover .overlay {
+  filter: blur(3px);
+  opacity: 0.2;
 }
 
-.body:hover .blur {
-  filter: blur(1px);
+.section:hover .overlay:hover {
+  opacity: 1;
+  transform: scale(1);
+  filter: none;
 }
 
 .title {
   display: none;
-}
-
-.body:hover .title {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: none;
-  color: white;
-  position: relative;
-}
-
-/* Modal Styles */
-
-.headerContainer {
-  padding-top: 40%;
-  position: relative;
-  width: 100%;
-}
-
-.header {
+  z-index: 10;
   position: absolute;
-  top:0;
-  right:0;
-  left: 0;
-  bottom: 0;
-  display: flex;
+  top:0;right:0;left:0;bottom:0;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background: rgba(14, 35, 59, 0.8);
+  background: rgb(0, 0, 0, 0.3);
+}
+
+.overlay:hover .title {
+  border: none;
   color: white;
-}
-
-.modalTitle {
-  font-size: 48px;
-  font-weight: 800;
-  position: relative;
-}
-
-.description {
-  font-size: 20px;
-  margin: 50px 20px;
-  text-align: center;
-}
-
-.featuresContainer {
-  position: relative;
-}
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  width: 100%;
-  top: -50px;
-  left: 0;
-  flex-wrap: wrap;
-}
-
-.feature {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  background: rgb(0, 158, 206);
-  border-radius: 50%;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.featureContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px; 
-}
-
-.featureIcon {
-  position: absolute;
-  top:0;
-  right:0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;  
-  font-size: 36px;
-  color: white;
-}
-
-.descContainer {
-  display: flex;
-  justify-content: space-around;
-}
-
-.footerContainer {
-  width: 100%;
   display: flex;
 }
 
-.featureDesc {
-  text-align: center;
-  width: 150px;
-}
-
-.tech {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-}
-
-.techItem {
-  border-radius: 5px;
-  margin: 0 5px;
-  padding: 7px 14px;
-  color: grey;
-}
-
-.techItem:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.liveLink {
-  font-size: 24px;
-  padding: 10px 40px;
-  color: white;
-  background: rgb(0, 0, 0, 0.01);
-  border: 1px solid white;
-  border-radius: 40px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.liveLink:hover {
-  background: white;
-  color: black;
-  text-decoration: none;
-}
-
-.gitLink {
-  height: 100%;
-  width: 100%;
-}
-
-.gitLink:hover {
-  text-decoration: none;
-}
-
-.gitLinkContainer {
-  font-size: 20px;
-  margin: auto; 
-}
-
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 24px;
-  color: rgb(202, 202, 202);
-  z-index: 3;
-}
-
-.closeButton:hover {
-  cursor: pointer;
-}
 
 @media screen and (max-width: 1200px) { 
   .container {
     width: 100%;
   }
 
-  .tech {
-    width: 80%;
-  }
-  
-  .description {
-    margin: 5px 25px;
-    font-size: 16px;
-  }
-
-  .featureDesc {
-    font-size: 14px;
-  }
-
-  .title {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: none;
-    color: white;
-  }
-
-  .overlay {
-    background: rgb(39, 39, 39, 0.5);  
-  }
-}
-
-@media screen and (max-width: 992px) { 
-
-  .headerContainer {
-    padding-top: 50%;
-  }
-
-  .modalTitle {
-    font-size: 24px;
-  }
-
-  .featuresContainer {
-    height: auto;
-  }
-
-  .features {
-    height: auto;
-    top: 0px;
-    margin: 20px 0;
-  }
-
-  .feature {
-    width: 75px;
-    height: 75px;
-  }
-
-  .featureIcon {
-    font-size: 18px;
-  }
-
-  .featureDesc {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .liveLink {
-    font-size: 12px;
-    padding: 7px 21px;
-  }
-
-  .techItem {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-}
-
-@media screen and (max-width: 768px) { 
-
-  .headerContainer {
-    padding-top: 60%;
-  }
-
-  .footerContainer {
-    flex-direction: column;
-  }
-
-  .tech {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .gitLinkContainer {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 576px) { 
-  .headerContainer {
-    padding-top: 100%;
+  .sectionTitle {
+    font-size: 36px;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styles from '../../styles/project.module.css';
+import styles from '../../styles/projectModal.module.css';
 import Modal from 'react-bootstrap/Modal';
 import UploadImage from '../admin/uploadImage';
 import EditProject from '../admin/editProject';

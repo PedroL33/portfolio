@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Project from './project';
-import styles from '../../styles/projectIndex.module.css';
+import styles from '../../styles/project.module.css';
 import checkAuth from '../../actions/checkAuth';
 import AddProject from '../admin/addProjects/addProject';
-import { getProjects, setCurrentProject, setProjects, clearGetProjects } from '../../actions';
+import { getProjects, clearGetProjects } from '../../actions';
 import ProjectModal from './projectModal';
 import Loading from '../loading';
 
@@ -25,10 +25,6 @@ function Projects() {
     }
   }, [getProjectsRes])
 
-  const handleClick = (project) => {
-    setShow(true)
-    dispatch(setCurrentProject(project))
-  }
 
   return (
       <div>
@@ -43,13 +39,7 @@ function Projects() {
             </div>:
             getProjectsRes.msg ? <Loading size={100} numCircles={20} />:
             projects.length ? projects.map((item) => 
-              <div key={item._id} className={styles.container} onClick={()=>handleClick(item)}>
-                <Project
-                  thumbImg={item.thumbImg}
-                  title={item.title}
-                  id={item._id}
-                />
-              </div>): <div className={styles.notAvailable}>No Projects Yet...</div>
+              <Project project={item} setShow={setShow}/>): <div className={styles.notAvailable}>No Projects Yet...</div>
           }
           <ProjectModal show={show} setShow={setShow}/>
           {checkAuth() ? <AddProject /> :null}
