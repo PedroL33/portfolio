@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from '../../styles/projectModal.module.css';
 import Modal from 'react-bootstrap/Modal';
@@ -10,9 +10,9 @@ import EditTech from '../admin/editTech';
 
 function ProjectModal(props) {
 
-  const modalImg = useSelector(state => state.modalImg);
+  const [img, setImg] = useState("");
   const project = useSelector(state => state.currentProject)
-  const backgroundImage = modalImg.length ? modalImg: project.modalImg ? project.modalImg: `${window.location.origin}/images/noImage.jpg`;
+  const backgroundImage = img.length ? img: project.modalImg ? project.modalImg: `${window.location.origin}/images/noImage.jpg`;
 
   const headerStyles = {
     backgroundImage: `url(${backgroundImage})`,
@@ -40,7 +40,7 @@ function ProjectModal(props) {
       >
         <Modal.Header style={headerStyles}>
           <div className={styles.headerContainer}>
-            {checkAuth() ? <UploadImage type="modal" id={project._id} />: null}
+            {checkAuth() ? <UploadImage img={img} setImg={setImg} type="modal" id={project._id} />: null}
             <i onClick={()=>props.setShow(false)} className={`${styles.closeButton} fas fa-times`}></i>
             <div className={styles.header}>
               <div className={styles.modalTitle}>
@@ -80,11 +80,11 @@ function ProjectModal(props) {
         <Modal.Footer>
           <div className={styles.footerContainer}>
             <div className={styles.tech}>
-              {project.tech ? project.tech.map(item => (
+              {project.tech && project.tech.length ? project.tech.map(item => (
                 <div className={styles.techItem} style={{background: `${getColor()}`}} key={item}>
                   {item}
                 </div>
-              )): null}
+              )): <div>No tech yet...</div>}
               {checkAuth() ? <EditTech id={project._id}/>: null}
             </div>
             <div className={styles.gitLinkContainer}>

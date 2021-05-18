@@ -7,8 +7,8 @@ import { setCurrentProject } from '../../actions';
 function Project(props) {
 
   const dispatch = useDispatch();
-  const thumbImg = useSelector(state => state.thumbImg);
   const [width, setWidth] = useState(null);
+  const [img, setImg] = useState("");
 
   useEffect(() => {
     if(!width) {
@@ -23,7 +23,7 @@ function Project(props) {
   }
 
   const getWidth = () => {
-    return (Math.random()*300) + 300;
+    return (Math.random()*200) + 300;
   }
 
   return ( 
@@ -33,8 +33,8 @@ function Project(props) {
         <a className={styles.overlay__btn} href={props.project.liveLink} target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a>
         <button className={styles.overlay__btn} onClick={(e)=>handleClick(e)}><i class="fas fa-info-circle"></i></button>
       </div>
-      <div className={styles.overlay} style={{backgroundImage: `url(${thumbImg.length ? thumbImg: props.project.thumbImg ? props.project.thumbImg: `${window.location.origin}/images/noImage.jpg`})`}}>
-        <UploadImage type="thumbnail" id={props.project._id}/>
+      <div className={styles.overlay} style={{backgroundImage: `url(${img.length ? img: props.project.thumbImg ? props.project.thumbImg: `${window.location.origin}/images/noImage.jpg`})`}}>
+        <UploadImage img={img} setImg={setImg} type="thumbnail" id={props.project._id}/>
         <div className={styles.title}>
           {props.project.title}
         </div>

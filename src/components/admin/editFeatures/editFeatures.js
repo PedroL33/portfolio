@@ -52,7 +52,7 @@ const EditFeatures = (props) => {
   return (
     <>
       <div className={styles.editFeatures} onClick={()=>handleOpen()}>
-        <i className='fas fa-pen'></i>
+        <i className='fas fa-plus'></i>
       </div>
       <Modal
         show={show}

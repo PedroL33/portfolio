@@ -66,32 +66,6 @@ export const clearDeleteProject = () => {
   }
 }
 
-export const setThumbImg = (url) => {
-  return {
-    type: "SET_THUMB_IMG",
-    payload: url
-  }
-}
-
-export const clearThumbImg = () => {
-  return {
-    type: "CLEAR_THUMB_IMG"
-  }
-}
-
-export const setModalImg = (url) => {
-  return {
-    type: "SET_MODAL_IMG",
-    payload: url
-  }
-}
-
-export const clearModalImg = () => {
-  return {
-    type: "CLEAR_MODAL_IMG"
-  }
-}
-
 export const editProjectStart = () => {
   return {
     type: "EDIT_PROJECT_START"

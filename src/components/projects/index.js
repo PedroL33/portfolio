@@ -42,10 +42,10 @@ function Projects() {
               projects.length ? projects.map((item) => 
                 <Project project={item} setShow={setShow}/>): <div className={styles.notAvailable}>No Projects Yet...</div>
               }
+              {checkAuth() ? <AddProject /> :null}
             </div>
           }
           <ProjectModal show={show} setShow={setShow}/>
-          {checkAuth() ? <AddProject /> :null}
         </div>
       </div>
   )

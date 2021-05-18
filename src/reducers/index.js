@@ -5,8 +5,6 @@ import loginReducer from './login';
 import addProjectReducer from './addProject';
 import getProjectsRes from './getProject';
 import deleteProjectReducer from './deleteProject';
-import modalImg from './modalImg';
-import thumbImg from './thumbImg';
 import currentProject from './currentProject';
 import editProject from './editProjectReducer';
 import editTech from './editTech';
@@ -22,8 +20,6 @@ const rootReducer = combineReducers({
   addProject: addProjectReducer,
   getProjectsRes,
   deleteProject: deleteProjectReducer,
-  thumbImg,
-  modalImg,
   currentProject,
   editProject,
   editTech,
