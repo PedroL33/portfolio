@@ -66,11 +66,11 @@ const Contact = () => {
                 {formErrors.message ? <span className={styles.form__error}>{formErrors.message}</span>: null}
                 <textarea className={formErrors.message ? `${styles.invalid} ${styles.form__input}`: styles.form__input} placeholder="Message" value={message} onChange={(e) => {setMessage(e.target.value)}} />
               </div>
+              {messageResponse.message ? null: <button className={styles.button} onClick={() => send()}>Send!</button>}
             </div>
           }
         </div>
       </div>
-      {messageResponse.message ? null: <button className={styles.button} onClick={() => send()}>Send!</button>}
     </div>
   )
 }
