@@ -26,7 +26,7 @@ function App() {
           <Login />
         </Route>
         <Route path="/">
-          <div>
+          <div className="page-content">
             <Header />
             <div ref={navRef}>
               <Nav aboutRef={aboutRef} projectRef={projectRef} contactRef={contactRef} />

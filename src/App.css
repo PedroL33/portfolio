@@ -10,3 +10,14 @@
   z-index:19;
   background-color: white;
 }
+
+.page-content {
+  width: 2400px;
+  margin: auto;
+}
+
+@media screen and (max-width: 2400px) { 
+  .page-content {
+    width: 100%;
+  }
+}

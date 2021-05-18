@@ -1,20 +1,22 @@
 .section {
   margin: auto;
-  width: 80%;
+  width: 60%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
 }
 
 .container {
   position: relative; 
-  flex: 1 0 auto;
-  border-radius: 10px;
   height: 200px;
-  width: auto;
+  transform: scale(.95);
+  transition: all 300ms ease-in-out;
+  flex: 1 0 auto;
 }
 
 .header {
-  height: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,77 +54,157 @@
   margin: 10px;
 }
 
-.body {
-  position: relative; 
-  flex: 1 0 auto;
-  border-radius: 10px;
-  height: 200px;
-  width: auto;
-}
-
-.siteImg {
-  display: block;
-  border: 0;
-  width: auto;
-  height: 100%;
-}
-
 .overlay {
   border: none;
+  border-radius: 10px;
+  overflow: hidden;
   position: absolute;
-  width: 100%;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   font-size: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  padding: 20px;
   text-align: center;
-  transform: scale(.95);
   transition: all 300ms ease;
   background-position: center;
-  background-size: cover;
+  background-size: 150% auto;
   background-repeat: no-repeat;
 }
 
-.section:hover .overlay {
-  filter: blur(3px);
-  opacity: 0.2;
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.section:hover .overlay:hover {
-  opacity: 1;
+.projectsContainer:hover .container {
+  filter: blur(3px);
+  opacity: 0.4;
+}
+
+.projectsContainer:hover .container:hover, .projectsContainer:hover .multiBtn:hover {
   transform: scale(1);
   filter: none;
+  opacity: 1;
+}
+
+.multiBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  transition: all 300ms ease;
+}
+
+.container:hover .multiBtn {
+  width:150px;
+  height: 150px;
+  top: -75px;
+  left: -75px;
+}
+
+.overlay__btn {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: -1;
+  transition: opacity 1ms ease, all 300ms ease;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(-30%, -30%);
+  opacity: 0;
+  border: none;
+  background: #3d9970;
+  color: white;
+  box-shadow: 0 0 0rem -.25rem #3d9970; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay__btn i {
+  font-size: 24px;
+}
+
+.overlay__btn:hover {
+  background: white;
+  color: #3d9970;
+  box-shadow: 0 0 1rem -.25rem #3d9970; 
+  text-decoration: none;
+}
+
+.container:hover .overlay__btn:nth-child(1) {
+  left: 0px;
+  top: 100px; 
+  z-index: 2;
+  opacity: 1;
+}
+
+.container:hover .overlay__btn:nth-child(2) {
+  top: 29.3px;
+  left: 29.3px;
+  z-index: 2;
+  opacity: 1;
+}
+
+.container:hover .overlay__btn:nth-child(3) {
+  top: 0px;
+  left: 100px; 
+  z-index: 2; 
+  opacity: 1;
 }
 
 .title {
   display: none;
-  z-index: 10;
+  z-index: 3;
   position: absolute;
   top:0;right:0;left:0;bottom:0;
   align-items: center;
   justify-content: center;
   background: rgb(0, 0, 0, 0.3);
+  color: white;
 }
 
-.overlay:hover .title {
-  border: none;
-  color: white;
+.container:hover .title {
   display: flex;
 }
 
 
 @media screen and (max-width: 1200px) { 
-  .container {
-    width: 100%;
-  }
 
   .sectionTitle {
     font-size: 36px;
   }
+
+  .container {
+    width: 320px !important;
+  }
+
+  .multiBtn {
+    left: 50%!important;
+    top: -50px!important;
+    margin-left: -75px;
+  }
+
+  .container:hover .overlay__btn:nth-child(1) {
+    left: -12px;
+    top: 6px; 
+  }
+  
+  .container:hover .overlay__btn:nth-child(2) {
+    top: 6px;
+    left: 63px;
+  }
+  
+  .container:hover .overlay__btn:nth-child(3) {
+    top: 6px;
+    left: 138px; 
+  }
+}
+
+@media screen and (max-width: 800px) { 
 }

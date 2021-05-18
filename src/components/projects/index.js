@@ -25,7 +25,6 @@ function Projects() {
     }
   }, [getProjectsRes])
 
-
   return (
       <div>
         <div className={styles.header}>
@@ -38,8 +37,12 @@ function Projects() {
               <button className={`${styles.errors__btn} fa fa-refresh`} onClick={() => dispatch(getProjects())}></button>
             </div>:
             getProjectsRes.msg ? <Loading size={100} numCircles={20} />:
-            projects.length ? projects.map((item) => 
-              <Project project={item} setShow={setShow}/>): <div className={styles.notAvailable}>No Projects Yet...</div>
+            <div className={styles.projectsContainer}>
+              {
+              projects.length ? projects.map((item) => 
+                <Project project={item} setShow={setShow}/>): <div className={styles.notAvailable}>No Projects Yet...</div>
+              }
+            </div>
           }
           <ProjectModal show={show} setShow={setShow}/>
           {checkAuth() ? <AddProject /> :null}
