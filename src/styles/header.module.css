@@ -40,6 +40,8 @@
   color: white;
   opacity: 0.9;
   background-image: linear-gradient(#536976, #292e49);
+  box-shadow: 0 0 0rem -.25rem #292e49; 
+  transition: all 300ms ease-in-out;
 }
 
 .fixedLink i {
@@ -50,7 +52,9 @@
 
 .fixedLink:hover {
   text-decoration: none;
-  color: white; 
+  color: #536976; 
+  background: white;
+  box-shadow: 0 0 1rem -.25rem #292e49; 
   opacity: 1;
 }
 
