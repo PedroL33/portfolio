@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import checkAuth from '../../actions/checkAuth';
 import { uploadImage } from '../../actions/admin';
-import { getProjects } from '../../actions';
+import { getProjects, setCurrentProject } from '../../actions';
 import styles from '../../styles/admin/editProjects.module.css';
  
 function UploadImage(props) {
 
   const dispatch = useDispatch();
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState(null);
+  const projects = useSelector(state => state.projects);
+  const currProject = useSelector(state => state.currentProject)
+
+  useEffect(() => {
+    if(projects.length && currProject._id) {
+      dispatch(setCurrentProject(projects.find(item => item._id == currProject._id)))
+    }
+  }, [projects])
 
   const savePhoto = async (e) => {
     e.stopPropagation();
