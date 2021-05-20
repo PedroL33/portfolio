@@ -237,7 +237,7 @@ export const uploadImage = (id, photo, type) => {
 export const editProject = (changes, id) => {
   return async (dispatch) => {
     dispatch(editProjectStart());
-    const res = await fetch(`https://glacial-reef-28775.herokuapp.com/:3000/project/edit/${id}`, {
+    const res = await fetch(`https://glacial-reef-28775.herokuapp.com/project/edit/${id}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
