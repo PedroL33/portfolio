@@ -118,9 +118,9 @@
   transform: translate(-30%, -30%);
   opacity: 0;
   border: none;
-  background: #3d9970;
+  background-image: linear-gradient(to left, #00303f, #00556e);
   color: white;
-  box-shadow: 0 0 0rem -.25rem #3d9970; 
+  box-shadow: 0 0 0rem -.25rem #00556e; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,8 +132,8 @@
 
 .overlay__btn:hover {
   background: white;
-  color: #3d9970;
-  box-shadow: 0 0 1rem -.25rem #3d9970; 
+  color: #00556e;
+  box-shadow: 0 0 1rem -.25rem #00556e; 
   text-decoration: none;
 }
 
@@ -165,7 +165,7 @@
   top:0;right:0;left:0;bottom:0;
   align-items: center;
   justify-content: center;
-  background: rgb(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0, 0.7);
   font-weight: 800;
   color: white;
 }

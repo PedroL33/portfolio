@@ -1,6 +1,6 @@
 .section {
   padding-top: 20px;
-  background: #536976;
+  background-image: linear-gradient(to left, #00303f, #00556e);
   height: 800px;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
 }
 
 .accept {
-  background: #536976;
+  background: none;
   border: none;
   color: white;
   position: absolute;
@@ -104,7 +104,7 @@
   border-radius: 30px;
   font-size: 20px;
   color: white;
-  background: #536976;
+  background-image: linear-gradient(to right, #00303f, #00556e);
   border: 1px solid white;
   font-weight: 800;
   transition: all 300ms ease;
@@ -117,7 +117,7 @@
 
 .button:hover {
   background: white;
-  color: #536976; 
+  color: #00556e; 
 }
 
 .serverError, .form__error {

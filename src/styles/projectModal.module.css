@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(14, 35, 59, 0.8);
+  background: rgb(0, 48, 63, 0.8);
   color: white;
 }
 
@@ -26,12 +26,13 @@
 
 .description {
   font-size: 20px;
-  margin: 50px 20px;
+  margin: 30px 20px;
   text-align: center;
 }
 
 .featuresContainer {
   position: relative;
+  flex: 1 0 auto;
 }
 
 .features {
@@ -48,7 +49,7 @@
   display: flex;
   width: 100px;
   height: 100px;
-  background: rgb(0, 158, 206);
+  background-image: linear-gradient(to left, #00303f, #00556e);
   border-radius: 50%;
   position: relative;
   margin-bottom: 10px;
@@ -58,7 +59,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px; 
+  flex: 1 0 auto;
 }
 
 .featureIcon {
@@ -74,11 +75,6 @@
   color: white;
 }
 
-.descContainer {
-  display: flex;
-  justify-content: space-around;
-}
-
 .footerContainer {
   width: 100%;
   display: flex;
@@ -86,7 +82,11 @@
 
 .featureDesc {
   text-align: center;
-  width: 150px;
+  font-weight: 800;
+  max-width: 200px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
 }
 
 .tech {
@@ -102,7 +102,8 @@
   border-radius: 5px;
   margin: 0 5px;
   padding: 7px 14px;
-  color: grey;
+  color: white;
+  background-color: #00556e;
 }
 
 .techItem:hover {

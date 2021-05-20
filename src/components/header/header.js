@@ -20,8 +20,8 @@ const Letter = styled.span`
   }
   &::after {
     transform: rotateY(-30deg);
-    text-shadow -1px 0 1px #3d9970, 1px 0 1px rgba(0, 0, 0, .3);
-    color: #3d9970;
+    text-shadow -1px 0 1px #00303f, 1px 0 1px rgba(0, 0, 0, .3);
+    color: #00303f;
     z-index: 2;
     transition: all 300ms ease;
   }

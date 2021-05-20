@@ -18,18 +18,12 @@ function ProjectModal(props) {
     backgroundImage: `url(${backgroundImage})`,
     padding: "0",
     backgroundPosition: "center",
-    backgroundSize: "auto 100%"
+    backgroundSize: "100% auto"
   }
 
   const bodyStyles = {
     padding: "0"
   }
-
-  const getColor = () => {
-    return "hsl(" + 360 * Math.random() + ',' +
-    (25 + 70 * Math.random()) + '%,' + 
-    (85 + 10 * Math.random()) + '%)';
-  } 
 
   return (
       <Modal
@@ -63,7 +57,7 @@ function ProjectModal(props) {
                     <div className={`${styles.feature}`}>
                       <i className={`${item.icon} ${styles.featureIcon}`}></i> 
                     </div>
-                    <div className={styles.featureDesc}>{item.description}</div>
+                    <div className={styles.featureDesc}><span>{item.description}</span></div>
                   </div>
                   )
                 ): <div className={styles.featureContainer}> 
@@ -81,7 +75,7 @@ function ProjectModal(props) {
           <div className={styles.footerContainer}>
             <div className={styles.tech}>
               {project.tech && project.tech.length ? project.tech.map(item => (
-                <div className={styles.techItem} style={{background: `${getColor()}`}} key={item}>
+                <div className={styles.techItem} key={item}>
                   {item}
                 </div>
               )): <div>No tech yet...</div>}
