@@ -147,7 +147,7 @@ export const editFeaturesClear = () => {
 export const login = (username, password) => {
   return dispatch => {
     console.log(username)
-    fetch('http://localhost:3000/login', {
+    fetch('https://glacial-reef-28775.herokuapp.com/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -175,7 +175,7 @@ export const login = (username, password) => {
 export const addProject = (title, desc, git, live) => {
   return async (dispatch) => {
     dispatch(addProjectStart())
-    const res = await fetch('http://localhost:3000/project/new', {
+    const res = await fetch('https://glacial-reef-28775.herokuapp.com/project/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
@@ -200,7 +200,7 @@ export const addProject = (title, desc, git, live) => {
 export const deleteProject = (projects) => {
   return async (dispatch) => {
     dispatch(deleteProjectStart())
-    const res = await fetch("http://localhost:3000/project/delete", {
+    const res = await fetch("https://glacial-reef-28775.herokuapp.com/project/delete", {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json', 
@@ -221,7 +221,7 @@ export const deleteProject = (projects) => {
 
 export const uploadImage = (id, photo, type) => {
 
-  const url = type=="thumbnail" ? `http://localhost:3000/project/thumbnail/${id}`: `http://localhost:3000/project/modal/${id}`
+  const url = type=="thumbnail" ? `https://glacial-reef-28775.herokuapp.com/project/thumbnail/${id}`: `https://glacial-reef-28775.herokuapp.com/project/modal/${id}`
 
   return async function(dispatch) {
     await fetch(url, {
@@ -237,7 +237,7 @@ export const uploadImage = (id, photo, type) => {
 export const editProject = (changes, id) => {
   return async (dispatch) => {
     dispatch(editProjectStart());
-    const res = await fetch(`http://localhost:3000/project/edit/${id}`, {
+    const res = await fetch(`https://glacial-reef-28775.herokuapp.com/:3000/project/edit/${id}`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -257,7 +257,7 @@ export const editProject = (changes, id) => {
 export const editTech = (tech, id) => {
   return async dispatch => {
     dispatch(editTechStart());
-    const res = await fetch(`http://localhost:3000/project/tech/${id}`, {
+    const res = await fetch(`https://glacial-reef-28775.herokuapp.com/project/tech/${id}`, {
       method: "POST",
       headers: {
         'Content-type': 'application/json',
@@ -277,7 +277,7 @@ export const editTech = (tech, id) => {
 export const editFeatures = (features, id) => {
   return async dispatch => {
     dispatch(editFeaturesStart());
-    const res = await fetch(`http://localhost:3000/project/features/${id}`, {
+    const res = await fetch(`https://glacial-reef-28775.herokuapp.com/project/features/${id}`, {
       method: "POST",
       headers: {
         'Content-type': 'application/json',

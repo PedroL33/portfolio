@@ -118,7 +118,7 @@ export const getProjects = () => {
   return async dispatch => {
     dispatch(getProjectsStart());
     try {
-      const res = await fetch('http://localhost:3000/project/all', {
+      const res = await fetch('https://glacial-reef-28775.herokuapp.com/project/all', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ export const sendMessage = (message, email, name) => {
   return async dispatch => {
     dispatch(sendMessageStart());
     try {
-      const res = await fetch('http://localhost:3000/newMessage', {
+      const res = await fetch('https://glacial-reef-28775.herokuapp.com/newMessage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
