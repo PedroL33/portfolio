@@ -28,7 +28,7 @@ const FixedLinks = () => {
 
   return (
     <Container className={styles.fixedLinks} sticky={sticky}>
-      <a className={styles.fixedLink} href={window.location.origin + "/Resume.pdf"} target="_blank" rel="noopener noreferrer" >
+      <a className={styles.fixedLink} href={window.location.origin + "/resume.pdf"} target="_blank" rel="noopener noreferrer" >
         <i className="far fa-file-pdf"></i>
       </a>
       <a className={styles.fixedLink} href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer">
