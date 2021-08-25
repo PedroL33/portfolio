@@ -49,7 +49,8 @@
   display: flex;
   width: 100px;
   height: 100px;
-  background-image: linear-gradient(to left, #00303f, #00556e);
+  background: #00556e;
+  box-shadow: 0 0 20px white;
   border-radius: 50%;
   position: relative;
   margin-bottom: 10px;
@@ -82,11 +83,12 @@
 
 .featureDesc {
   text-align: center;
-  font-weight: 800;
-  max-width: 200px;
+  max-width: 250px;
+  padding: 10px 0;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
+  font-size: 18px;
 }
 
 .tech {
@@ -102,8 +104,10 @@
   border-radius: 5px;
   margin: 0 5px;
   padding: 7px 14px;
-  color: white;
-  background-color: #00556e;
+  font-size: 20px;
+  text-decoration: underline;
+  font-style: italic;
+  color: grey;
 }
 
 .techItem:hover {
@@ -167,8 +171,50 @@
     font-size: 16px;
   }
 
+  .featuresContainer {
+    position: relative;
+    margin: auto;
+  }
+
+  .features {
+    height: auto;
+    top: 0px;
+    margin: 20px 0;
+  }
+
+  .feature {
+    background: white;
+  }
+
   .featureDesc {
-    font-size: 14px;
+    max-width: 50%;
+  }
+
+  .feature i {
+    color: #00556e;
+    font-size: 48px;
+  }
+
+  .featureContainer:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .featureContainer:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .featureContainer:nth-child(odd) .featureDesc {
+    text-align: right;
+  }
+
+  .featureContainer:nth-child(even) .featureDesc {
+    text-align: left;
+  }
+
+  .featureContainer {
+    justify-content: center;
+    padding: 20px 0;
+    width: 90%;
   }
 
   .title {
@@ -195,28 +241,8 @@
     font-size: 24px;
   }
 
-  .featuresContainer {
-    height: auto;
-  }
-
-  .features {
-    height: auto;
-    top: 0px;
-    margin: 20px 0;
-  }
-
-  .feature {
-    width: 75px;
-    height: 75px;
-  }
-
-  .featureIcon {
-    font-size: 18px;
-  }
-
   .featureDesc {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 16px;
   }
 
   .description {
@@ -229,8 +255,8 @@
   }
 
   .techItem {
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 16px;
+    padding: 5px 5px;
   }
 }
 

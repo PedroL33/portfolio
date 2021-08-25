@@ -54,7 +54,7 @@ function ProjectModal(props) {
               {
                 project.features && project.features.length ? project.features.map(item => (
                   <div className={styles.featureContainer} key={item.icon}> 
-                    <div className={`${styles.feature}`}>
+                    <div className={styles.feature}>
                       <i className={`${item.icon} ${styles.featureIcon}`}></i> 
                     </div>
                     <div className={styles.featureDesc}><span>{item.description}</span></div>
