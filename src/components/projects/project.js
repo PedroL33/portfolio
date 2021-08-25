@@ -30,8 +30,8 @@ function Project(props) {
     <div className={styles.container} style={{width: `${width}px`}}>
       <div className={styles.multiBtn}>
         <a className={styles.overlay__btn} href={props.project.gitLink} target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a className={styles.overlay__btn} href={props.project.liveLink} target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i></a>
-        <button className={styles.overlay__btn} onClick={(e)=>handleClick(e)}><i class="fas fa-info-circle"></i></button>
+        <a className={styles.overlay__btn} href={props.project.liveLink} target="_blank" rel="noopener noreferrer">Visit!</a>
+        <button className={styles.overlay__btn} onClick={(e)=>handleClick(e)}><i class="fas fa-ellipsis-h"></i></button>
       </div>
       <div className={styles.overlay} style={{backgroundImage: `url(${img.length ? img: props.project.thumbImg ? props.project.thumbImg: `${window.location.origin}/images/noImage.jpg`})`}}>
         <UploadImage img={img} setImg={setImg} type="thumbnail" id={props.project._id}/>
