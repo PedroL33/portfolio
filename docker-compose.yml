@@ -5,7 +5,6 @@ services:
   frontend:
     container_name: portfolio
     build: ./
-    dockerfile: Dockerfile
     volumes:
       - './:/app'
       - '/app/node_modules'
