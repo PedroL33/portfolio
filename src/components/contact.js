@@ -44,7 +44,7 @@ const Contact = () => {
       {formErrors.server ? <div className={styles.serverError}>{formErrors.server}</div>:null}
       <div className={styles.container}>
         <div className={styles.left}>
-          <i class="far fa-comments"></i>
+          <i className="far fa-comments"></i>
         </div>
         <div className={styles.formContainer}>
           {

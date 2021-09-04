@@ -13,12 +13,12 @@ const Underline = styled.span`
     left: -0.3rem;
     right: -0.3rem;
     height: 0.75rem;
-    width: ${props => props.currentPage=="about" ? "110%": "0"};
+    width: ${props => props.currentPage==="about" ? "110%": "0"};
     z-index: -1;
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
     background-repeat: no-repeat;
     background-size: cover;
-    ${props => props.currentPage=="about" ? `transition: all 500ms linear; transition-delay: ${props.order * 550}ms`: ""};
+    ${props => props.currentPage==="about" ? `transition: all 500ms linear; transition-delay: ${props.order * 550}ms`: ""};
   }
   &:hover {
     cursor: pointer;
@@ -36,11 +36,11 @@ const Highlight = styled.span`
     transform: skew(-10deg);
     box-sizing: content-box;
     content: "";
-    width: ${props => props.currentPage=="about" ? "100%": "0"};
+    width: ${props => props.currentPage==="about" ? "100%": "0"};
     height: 80%;
     background-color: yellow;
     z-index: -1;
-    ${props => props.currentPage=="about" ? `transition: all 500ms linear; transition-delay: ${props.order * 550}ms;`: ""};
+    ${props => props.currentPage==="about" ? `transition: all 500ms linear; transition-delay: ${props.order * 550}ms;`: ""};
   }
 ` 
 
@@ -58,7 +58,7 @@ function About(props) {
   }
 
   useEffect(() => {
-    if(currentPage != "") {
+    if(currentPage !== "") {
       setSticky(true)
     }else {
       setSticky(false)

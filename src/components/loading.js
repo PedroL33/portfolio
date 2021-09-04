@@ -43,7 +43,7 @@ const Loading = (props) => {
     <div style={{height: "100%"}}>
       <Loader size={props.size}>
         {[...Array(props.numCircles).keys()].map(item => 
-          <Dot size={props.size} numCircles={props.numCircles} number={item} color={getColor()}></Dot>
+          <Dot key={item} size={props.size} numCircles={props.numCircles} number={item} color={getColor()}></Dot>
         )}
       </Loader>
     </div>

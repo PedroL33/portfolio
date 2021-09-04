@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/navbar.module.css';
 import styled from 'styled-components';
@@ -72,11 +72,11 @@ export default function Nav(props) {
       const projectBox = props.projectRef.current.getBoundingClientRect();
       const contactBox = props.contactRef.current.getBoundingClientRect();
       if(aboutBox.top < 100 && aboutBox.bottom > 100) {
-        current != "about" && dispatch(currentToAbout("about"));
+        current !== "about" && dispatch(currentToAbout("about"));
       }else if(projectBox.top < 100 && projectBox.bottom > 100) {
-        current != "projects" && dispatch(currentToProjects("projects"));
+        current !== "projects" && dispatch(currentToProjects("projects"));
       }else if(contactBox.top < 100 && contactBox.bottom > 100) {
-        current != "contact" && dispatch(currentToContact("contact"));
+        current !== "contact" && dispatch(currentToContact("contact"));
       }else {
         if(current.length) {
           dispatch(currentReset());

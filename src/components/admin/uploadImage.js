@@ -14,7 +14,7 @@ function UploadImage(props) {
 
   useEffect(() => {
     if(projects.length && currProject._id) {
-      dispatch(setCurrentProject(projects.find(item => item._id == currProject._id)))
+      dispatch(setCurrentProject(projects.find(item => item._id === currProject._id)))
     }
   }, [projects])
 
