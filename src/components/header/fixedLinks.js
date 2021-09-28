@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/header.module.css';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import resume from '../../resources/PeterLeeResume.pdf';
 
 const Container = styled.div`
     font-size: 24px;
@@ -28,7 +29,7 @@ const FixedLinks = () => {
 
   return (
     <Container className={styles.fixedLinks} sticky={sticky}>
-      <a className={styles.fixedLink} href={window.location.origin + "/PeterLeeResume.pdf"} target="_blank" rel="noopener noreferrer" >
+      <a className={styles.fixedLink} href={resume} target="_blank" rel="noopener noreferrer" >
         <i className="far fa-file-pdf"></i>
       </a>
       <a className={styles.fixedLink} href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer">
