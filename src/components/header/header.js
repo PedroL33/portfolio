@@ -64,7 +64,7 @@ const Header = () => {
         </div>
         <div className={styles.desc}>Full Stack Developer</div>
         <div className={styles.headerLinks}>
-          <a className={styles.headerLink} href={process.env.PUBLIC_URL + '/PeterLeeResume.pdf'} target="_blank" rel="noopener noreferrer" >
+          <a className={styles.headerLink} href="https://chatbucket11.s3.us-west-2.amazonaws.com/portfolio/PeterLeeResume.pdf" target="_blank" rel="noopener noreferrer" >
             <i className="far fa-file-pdf"></i>
           </a>
           <a className={styles.headerLink} href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer">

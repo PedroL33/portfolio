@@ -28,7 +28,7 @@ const FixedLinks = () => {
 
   return (
     <Container className={styles.fixedLinks} sticky={sticky}>
-      <a className={styles.fixedLink} href={process.env.PUBLIC_URL + '/PeterLeeResume.pdf'} target="_blank" rel="noopener noreferrer" >
+      <a className={styles.fixedLink} href="https://chatbucket11.s3.us-west-2.amazonaws.com/portfolio/PeterLeeResume.pdf" target="_blank" rel="noopener noreferrer" >
         <i className="far fa-file-pdf"></i>
       </a>
       <a className={styles.fixedLink} href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer">
