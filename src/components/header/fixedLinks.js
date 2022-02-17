@@ -31,9 +31,9 @@ const FixedLinks = () => {
       <a className={styles.fixedLink} href="https://chatbucket11.s3.us-west-2.amazonaws.com/portfolio/PeterLeeResume.pdf" target="_blank" rel="noopener noreferrer" >
         <i className="far fa-file-pdf"></i>
       </a>
-      <a className={styles.fixedLink} href="https://www.linkedin.com/in/peter-lee-2973371a4/" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-linkedin-in"></i>
-      </a>
+      <a className={styles.fixedLink} href="mailto: leepeter019@gmail.com">
+        <i class="far fa-envelope"></i>
+      </a> 
       <a className={styles.fixedLink} href="https://github.com/PedroL33" target="_blank" rel="noopener noreferrer" >
         <i className="fab fa-github"></i>
       </a>
